@@ -1,2 +1,2 @@
 # wwwproject
-ERIC HATES DARK SKIN TONE PEOPLE
+
