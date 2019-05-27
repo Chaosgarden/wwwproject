@@ -1,4 +1,17 @@
-header
+.container-fluid 
 {
-	background: black;
+
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 100px 300px;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+	border:5px solid yellow;
+}
+div
+{
+	border:5px solid black;
 }
