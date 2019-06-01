@@ -1,7 +1,7 @@
 <section class="container">
 	<div class="row">
 		
-		<!--whitespace placeholder(prob not the best way-->
+		<!--flexbox is prob a better way, whitespace placeholder(prob not the best way-->
 		<div class="col-2">
 		</div>
 		
