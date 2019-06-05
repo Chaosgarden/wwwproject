@@ -15,7 +15,7 @@
 		
 		<div class="col-md-7 ">
 			<input type="button" value="Move Gallery"> 
-			<input type="input" placeholder="Pizza"> 
+			<input type="input" placeholder="Yes"> 
 			<select> </select>
 		</div>
 		
