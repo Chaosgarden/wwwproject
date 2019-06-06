@@ -1,14 +1,16 @@
 <?php	
-
+//database info
 $host = '';
 $dbusername = 'root';
 $dbpassword = 'root';
 $dbname = 'moviegalery';
 
-//$name = filter_input($_POST["name"]);
-//$email = filter_input($_POST["email"]);
-//$message = filter_input($_POST["message"]);
-//var_dump($name ,$email,$message);
+$firstNames = 	$_POST['firstName'];
+$lastNames = 	$_POST['lastName'];
+$emails = 		$_POST['email'];
+$credentials = 	$_POST['credential'];
+
+var_dump($firstNames ,$credentials,$emails);
 $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 
 if (mysqli_connect_error())
@@ -18,7 +20,7 @@ if (mysqli_connect_error())
 else
 {
 	$sql = "INSERT INTO admins (firstName, lastName, email, credential)
-			 values ('e','ee','eee','eeee')";
+			 values ('$firstNames', '$lastNames', '$emails', '$credentials')";
 			
 		if ($conn->query($sql))
 		{
