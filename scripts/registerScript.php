@@ -1,16 +1,13 @@
 <?php	
 //database info
-$host = '';
-$dbusername = 'root';
-$dbpassword = 'root';
-$dbname = 'moviegalery';
+require 'db-connect.php'
 
 $firstNames = 	$_POST['firstName'];
 $lastNames = 	$_POST['lastName'];
 $emails = 		$_POST['email'];
 $credentials = 	$_POST['credential'];
 
-var_dump($firstNames ,$credentials,$emails);
+//var_dump($firstNames ,$credentials,$emails);
 $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 
 if (mysqli_connect_error())
@@ -30,6 +27,7 @@ else
 		{
 			echo "Error: ". $sql ." ". $conn->error;
 		}
+			
 	$conn->close();
 
 }
