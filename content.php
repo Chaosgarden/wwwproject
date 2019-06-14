@@ -1,7 +1,7 @@
 <?php	
 //database info
 require 'db-connect.php';
-
+include '/classes/movie.php';
 $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 
 if (mysqli_connect_error())
@@ -11,11 +11,11 @@ if (mysqli_connect_error())
 else
 {
 		//mysql query
-		$sql = "SELECT * FROM admins";
+		$sql = "SELECT * FROM movies";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
-			// output data of each row
+			// data of each row
 			while($row = $result->fetch_assoc()) {
 ?>
 	<section class="container">
@@ -25,7 +25,9 @@ else
 			<div class="col-2">
 			</div>
 <?php
-				echo "id: " . $row["firstName"]. " - Name: " . $row["lastName"]. " " . $row["email"]. "<br>";
+				//the contents for the movie is put here
+				// example
+				echo "id: " . $row["movieImage"]. " - Name: " . $row["fullDescription"]. " " . $row["shortDescription"]. "<br>";
 ?>				
 		<div class="col-md-8">
 			<img> </img>
