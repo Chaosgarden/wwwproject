@@ -1,8 +1,7 @@
 <?php	
 //database info
-require 'db-connect.php';
+require 'config.php';
 include '/classes/movie.php';
-$conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
 
 if (mysqli_connect_error())
 {
@@ -11,8 +10,8 @@ if (mysqli_connect_error())
 else
 {
 		//mysql query
-		$sql = "SELECT * FROM movies";
-		$result = $conn->query($sql);
+		$sql = "SELECT * FROM admins";
+		$result = $db->query($sql);
 
 		if ($result->num_rows > 0) {
 			// data of each row
@@ -27,7 +26,7 @@ else
 <?php
 				//the contents for the movie is put here
 				// example
-				echo "id: " . $row["movieImage"]. " - Name: " . $row["fullDescription"]. " " . $row["shortDescription"]. "<br>";
+				echo "id: " . $row["credential"]. " - Name: " . $row["email"];
 ?>				
 		<div class="col-md-8">
 			<img> </img>
@@ -45,7 +44,7 @@ else
 			echo "0 results";
 		}
 			
-	$conn->close();
+	$db->close();
 
 }
 

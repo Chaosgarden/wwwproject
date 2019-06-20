@@ -21,7 +21,7 @@
 		
 		<div class="col">
 			<span> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up </a> </span>
-			<input type="button" value="Sign in"> 
+			<span> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in </a> </span>
 			
 		</div>
 		
