@@ -1,6 +1,6 @@
 <?php	
 //database info
-require '../db-connect.php';
+require '../config.php';
 
 $firstNames = 	$_POST['firstName'];
 $lastNames = 	$_POST['lastName'];
