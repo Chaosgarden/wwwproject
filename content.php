@@ -26,7 +26,7 @@ else
 <?php
 				//the contents for the movie is put here
 				// example
-				echo "id: " . $row["credential"]. " - Name: " . $row["email"];
+				echo "pw: " . $row["credential"]. " - email: " . $row["email"];
 ?>				
 		<div class="col-md-8">
 			<img> </img>
