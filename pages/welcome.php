@@ -12,7 +12,7 @@
 		<h2><a href = "logout.php">Sign Out</a></h2>
 		
 		<section class="container">
-			<input type="button">
+			<input type="button" value="update">
 			<input type="button">
 			<input type="button">
 

@@ -17,9 +17,9 @@
       // If result matched $myEmail and $myPassword, table row must be 1 row
 		
       if($count == 1) {
-
-         $_SESSION['login_user'] = $myEmail; 
-         header("location: welcome.php");
+		
+        $_SESSION['login_user'] = $myEmail; 
+        header("location: welcome.php");
       }else {
          echo "<script> alert('email or password wrong'); </script>";
       }
