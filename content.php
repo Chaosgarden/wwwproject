@@ -10,12 +10,14 @@ if (mysqli_connect_error())
 else
 {
 		//mysql query
-		$sql = "SELECT * FROM admins";
+		$sql = "SELECT * FROM movies";
 		$result = $db->query($sql);
 
-		if ($result->num_rows > 0) {
+		if ($result->num_rows > 0) 
+		{
 			// data of each row
-			while($row = $result->fetch_assoc()) {
+			while($row = $result->fetch_assoc()) 
+			{
 ?>
 	<section class="container">
 		<div class="row">
@@ -26,7 +28,7 @@ else
 <?php
 				//the contents for the movie is put here
 				// example
-				echo "pw: " . $row["credential"]. " - email: " . $row["email"];
+				echo $row["title"]. $row["category"]. $row["shortDescription"]. $row["link"]. "Directors: ". $row["link"]. "Stars: ". $row["link"];
 ?>				
 		<div class="col-md-8">
 			<img> </img>
@@ -40,7 +42,8 @@ else
 <?php	
 
 			}
-		} else {
+		} else 
+		{
 			echo "0 results";
 		}
 			
