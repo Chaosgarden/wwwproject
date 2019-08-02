@@ -11,7 +11,7 @@ else
 {
 	//mysql query
 	$sql = "SELECT * FROM movies";
-	$result = $db->query($sql);
+	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) 
 	{
@@ -45,7 +45,7 @@ else
 		echo "0 results";
 	}
 			
-	$db->close();
+	$conn->close();
 
 }
 

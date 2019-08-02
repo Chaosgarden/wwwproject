@@ -7,7 +7,7 @@
 			<input type="text" name="lastName" placeholder="Enter your family name" required>
 			<input type="password" name="credential" placeholder="Enter your password" required>
 			<input type="text" name="email" placeholder="Enter your email" required>
-			<input type="submit" value="Submit">
+			<input type="submit" name="submit" value="Submit">
 		</form>
 	</div>
 

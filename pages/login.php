@@ -2,11 +2,11 @@
  include '../config.php';
  session_start();
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   if(isset($_POST['submit'])) {
       // username and password sent from form 
       
-      $myEmail = mysqli_real_escape_string($db,$_POST['email']);
-      $myPassword = mysqli_real_escape_string($db,$_POST['credential']); 
+      $myEmail = mysqli_real_escape_string($conn,$_POST['email']);
+      $myPassword = mysqli_real_escape_string($conn,$_POST['credential']); 
 	  
       $sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
 	  

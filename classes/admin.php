@@ -3,7 +3,7 @@ class admin
 {
 	function __construct()
 	{
-		require '../config.php';
+		/*
 		$empty = false;
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
@@ -21,7 +21,7 @@ class admin
 			
 			$empty = true;
 		}
-		*/
+		
 			
 		if (mysqli_connect_error())
 		{
@@ -29,7 +29,7 @@ class admin
 		}
 		else
 		{
-			$sql = "INSERT INTO admins (firstName, lastName, email, credential)
+				$sql = "INSERT INTO admins (firstName, lastName, email, credential)
 					 values ('$firstNames', '$lastNames', '$emails', '$credentials')";
 					
 				if ($db->query($sql))
@@ -40,10 +40,12 @@ class admin
 				{
 					echo "Error: ". $sql ." ". $db->error;
 				}
-					
-			$db->close();
+				
+			$conn->close();
+			
 
 		}
+		*/
 	}
 	
 	function editClass(){}
