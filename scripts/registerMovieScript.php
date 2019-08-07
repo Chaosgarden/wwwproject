@@ -22,10 +22,6 @@ require '../config.php';
 		$empty = true;
 	}
 		
-if (mysqli_connect_error())
-{
-	die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
-}
 else
 {
 	$sql = "INSERT INTO movies (movieImage, title, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
@@ -40,7 +36,7 @@ else
 			echo "Error: ". $sql ." ". $db->error;
 		}
 			
-	$db->close();
+	$conn->close();
 
 }
 ?>

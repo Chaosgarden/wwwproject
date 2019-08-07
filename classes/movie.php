@@ -1,8 +1,8 @@
 <?php
 class Movie
 {
- 	public $image;
 	public $title;
+ 	public $image;	
 	public $fullDescription;
 	public $shortDescription;
 	public $category;
@@ -11,7 +11,7 @@ class Movie
 	public $link;
  
 	function __construct( 
-		$image, $title, $fullDescription, $shortDescription, $category, $yearOfWork, $movieLength, $link ) 
+		$title, $image, $fullDescription, $shortDescription, $category, $yearOfWork, $movieLength, $link ) 
 	{
 		$this->image = $image;
 		$this->title = $title;

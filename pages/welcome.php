@@ -11,7 +11,7 @@
 		<h2><a href = "logout.php">Sign Out</a></h2>
 		
 		<section class="container">
-			<input type="button" value="update">
+			<a href="../pages/addMovie.php" class="btn btn-default">Go to Google</a>
 			<input type="button">
 			<input type="button">
 
