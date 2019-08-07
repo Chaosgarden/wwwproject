@@ -1,5 +1,5 @@
 <?php	
-//database info
+
 require 'config.php';
 include '/classes/movie.php';
 
@@ -18,6 +18,7 @@ else
 		// data of each row
 		while($row = $result->fetch_assoc()) 
 		{
+			
 			?>
 			<section class="container">
 				<div class="row">
@@ -26,7 +27,12 @@ else
 					<div class="col-2">
 					</div>
 						
-					<?php echo $row["title"]. $row["category"]. $row["shortDescription"]. $row["link"]. "Directors: ". $row["link"]. "Stars: ". $row["link"]; ?>				
+						<?php
+							$Movies = new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
+						?>
+							<p> <?php echo $Movies->title; ?> </p>
+							<a href="<?php echo $Movies->link; ?>"> </a>
+									
 					
 					<div class="col-md-8">
 						<img> </img>

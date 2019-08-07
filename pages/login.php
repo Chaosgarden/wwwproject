@@ -1,5 +1,7 @@
  <?php
- include '../config.php';
+ require '../classes/admin.php';
+ require_once '../config.php';
+
  session_start();
    
    if(isset($_POST['submit'])) {
@@ -10,7 +12,7 @@
 	  
       $sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
 	  
-      $result = mysqli_query($db,$sql);
+      $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $count = mysqli_num_rows($result);
       
@@ -19,9 +21,12 @@
       if($count == 1) {
 		
         $_SESSION['login_user'] = $myEmail; 
+		
         header("location: welcome.php");
+		$conn->close();
       }else {
          echo "<script> alert('email or password wrong'); </script>";
+		 $conn->close();
       }
    }
 ?>
@@ -33,7 +38,7 @@
 			<input type="text" name="email" placeholder="Enter your email" required>
 			<input type="password" name="credential" placeholder="Enter your password" required>
 
-			<input type="submit" value="Submit">
+			<input type="submit" name="submit" value="Submit">
 		</form>
 	</div>
 

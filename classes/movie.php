@@ -1,28 +1,28 @@
 <?php
-class Movie 
+class Movie
 {
  	public $image;
 	public $title;
-	public $duration;
+	public $fullDescription;
+	public $shortDescription;
 	public $category;
-	public $description;
-	public $director;
-	public $stars;
-	public $trailer;
+	public $yearOfWork;
+	public $movieLength;
+	public $link;
  
 	function __construct( 
-		$movieImage, $movieTitle, $movieDuration, $movieCategory, $movieDescription, $movieDirector, $movieStars, $movieTrailer ) 
+		$image, $title, $fullDescription, $shortDescription, $category, $yearOfWork, $movieLength, $link ) 
 	{
-		$this->image = $movieImage;
-		$this->title = $movieTitle;
-		$this->duration = $movieDuration;
-		$this->category = $movieCategory;
-		$this->description = $movieDescription;
-		$this->director = $movieDirector;
-		$this->stars = $movieStars;
-		$this->trailer = $movieTrailer;
+		$this->image = $image;
+		$this->title = $title;
+		$this->fullDescription = $fullDescription;
+		$this->shortDescription = $shortDescription;
+		$this->category = $category;
+		$this->yearOfWork = $yearOfWork;
+		$this->movieLength = $movieLength;
+		$this->link = $link;
 	}
 }
-//$firstmovie = new Movie("5", "JonWick", "0","89", "po", "o3", "Yes", "No" );
-//echo $firstmovie->title;
+//$first = new Movie("5", "JonWick", "0","89", "po", "o3", "Yes", "No" );
+//echo $first->title;
 ?>
