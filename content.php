@@ -30,8 +30,8 @@ else
 						<?php
 							$Movies = new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
 						?>
-							<p> <?php echo $Movies->title; ?> </p>
-							<a href="<?php echo $Movies->link; ?>">MOVIES </a>
+							<p> <?php echo $Movies->getTitle(); ?> </p>
+							<a href="<?php echo $Movies->getLink(); ?>">MOVIES </a>
 									
 					
 					<div class="col-md-8">
