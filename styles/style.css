@@ -2,16 +2,29 @@
 {
 
 }
-.grid-container {
+.grid-container 
+{
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 100px 300px;
-  grid-gap: 10px;
+  grid-gap: 5px;
   background-color: #2196F3;
-  padding: 10px;
+  padding: 5px;
 	border:5px solid yellow;
 }
 div
 {
-	border:5px solid black;
+	border:1px solid white;
+}
+.container
+{
+	
+}
+.row
+{
+	background-color: #f5f9fa;
+}
+.row
+{
+	text-align: center;
 }

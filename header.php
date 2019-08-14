@@ -9,21 +9,24 @@
 <body>
 <header class="container-fluid">
 	<div class="row">
-		<div class="col">
+		<div class="col-2">
 			<input type="button" value="Movie Gallery"> 
 		</div>
 		
-		<div class="col-md-7 ">
+		<div class="col-8 ">
 			<input type="button" value="Move Gallery"> 
 			<input type="input" placeholder="Yes"> 
 			<select> </select>
 		</div>
 		
-		<div class="col">
-			<span> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up </a> </span>
-			<span> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in </a> </span>
+		<div class="col-2">
 			
+			<div class="row">
+				<span class="centerText"> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a> </span>
+			</div>
+			<div class="row">
+				<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
+			</div>
 		</div>
-		
 	</div>
 </header>

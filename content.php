@@ -24,29 +24,54 @@ else
 				<div class="row">
 		
 					<!--flexbox is prob a better way, whitespace placeholder(prob not the best way-->
-					<div class="col-2">
-					</div>
+					
 						
 						<?php
 							$Movies = new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
 						?>
-							<p> <?php echo $Movies->getTitle(); ?> </p>
-							<a href="<?php echo $Movies->getLink(); ?>">MOVIES </a>
-									
-					
-					<div class="col-md-8">
-						<img> </img>
+							
+							
+							
+					<div class="col-12">
+						<div class="row">
+							<div class="col-4">
+								<p> <?php echo $Movies->getImage(); ?> </p>
+							</div>
+							<div class="col-8">
+								<table>
+									<tr>
+										<th>
+										<p> <?php echo $Movies->getTitle(); ?> </p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Movies->getMovieLength(); ?> - <?php echo $Movies->getCategory(); ?> </p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Movies->getShortDescript(); ?> </p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<button  type="button" class="btn"><a href="<?php echo $Movies->getLink(); ?>">Movie Trailer </a></button>
+										</td>
+									</tr>
+								
+								</table>
+							</div>
+						</div>
 					</div>
-				
 					<!--whitespace placeholder(prob not the best way-->
-					<div class="col-2">
-					</div>
 				</div>
 			</section>
 <?php	
 
 		}
-	} else 
+	} 
+	else 
 	{
 		echo "0 results";
 	}
