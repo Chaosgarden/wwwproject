@@ -24,7 +24,8 @@ div
 {
 	background-color: #f5f9fa;
 }
-.row
+.centerText
 {
+	width: 100%;
 	text-align: center;
 }

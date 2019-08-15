@@ -10,12 +10,11 @@
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-2">
-			<input type="button" value="Movie Gallery"> 
+			<a href="/wwwproject/index.php" class="btn btn-default" role="button">Movie Gallery </a>
 		</div>
 		
 		<div class="col-8 ">
-			<input type="button" value="Move Gallery"> 
-			<input type="input" placeholder="Yes"> 
+			<input type="input" placeholder="Movie Title"> 
 			<select> </select>
 		</div>
 		

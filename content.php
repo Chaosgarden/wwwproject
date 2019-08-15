@@ -56,7 +56,7 @@ else
 									</tr>
 									<tr>
 										<td>
-											<button  type="button" class="btn"><a href="<?php echo $Movies->getLink(); ?>">Movie Trailer </a></button>
+											<a href="<?php echo $Movies->getLink(); ?>" class="btn btn-info" role="button">Movie Trailer </a>
 										</td>
 									</tr>
 								
