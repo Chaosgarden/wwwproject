@@ -1,7 +1,6 @@
 <?php	
 include '/classes/movie.php';
 
-
 //mysql query
 $sql = "SELECT * FROM movies";
 $result = $conn->query($sql);
