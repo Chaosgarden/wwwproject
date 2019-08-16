@@ -7,6 +7,12 @@
 	
 </head>
 <body>
+<?php    include_once('scripts/session.php'); ?>
+<?php if($loggedIn == true)
+{
+	echo "pizza";
+}
+?>
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-2">
