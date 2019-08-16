@@ -4,7 +4,7 @@ require '../config.php';
 	if (isset($_POST['submit'])) 
 	{
 		$title = mysqli_real_escape_string($conn,$_POST['title']);
-		$movieImage = mysqli_real_escape_string($conn,$_POST['movieImage']);
+		$movieImage = mysqli_real_escape_string($conn,$_POST['image']);
 		$fullDescription = mysqli_real_escape_string($conn,$_POST['fullDescription']);
 		$shortDescription = mysqli_real_escape_string($conn,$_POST['shortDescription']);
 		$category = mysqli_real_escape_string($conn,$_POST['category']);
