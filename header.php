@@ -25,22 +25,22 @@
 					<option value="drama">Drama </option>
 					<option value="dantasy">Fantasy </option>
 					<option value="historical">Historical </option>
-					<option value="Historical fiction">Historical fiction </option>
-					<option value="Horror">Horror </option>
-					<option value="Magical realism">Magical realism </option>
-					<option value="Mystery">Mystery </option>
-					<option value="Paranoid fiction">Paranoid fiction </option>
-					<option value="Philosophical">Philosophical </option>
-					<option value="Political">Political </option>
-					<option value="Romance">Romance </option>
-					<option value="Saga">Saga </option>
-					<option value="Satire">Satire </option>
-					<option value="Science fiction">Science fiction </option>
-					<option value="Social">Social </option>
-					<option value="Speculative">Speculative </option>
-					<option value="Thriller">Thriller </option>
-					<option value="Urban">Urban </option>
-					<option value="Western">Western </option>
+					<option value="historical fiction">Historical fiction </option>
+					<option value="horror">Horror </option>
+					<option value="magical realism">Magical realism </option>
+					<option value="mystery">Mystery </option>
+					<option value="paranoid fiction">Paranoid fiction </option>
+					<option value="philosophical">Philosophical </option>
+					<option value="political">Political </option>
+					<option value="romance">Romance </option>
+					<option value="saga">Saga </option>
+					<option value="satire">Satire </option>
+					<option value="science fiction">Science fiction </option>
+					<option value="social">Social </option>
+					<option value="speculative">Speculative </option>
+					<option value="thriller">Thriller </option>
+					<option value="urban">Urban </option>
+					<option value="western">Western </option>
 				</select>
 			</div>
 		</div>
@@ -56,4 +56,3 @@
 		</div>
 	</div>
 </header>
-

@@ -35,7 +35,7 @@ else
 					<div class="col-12">
 						<div class="row">
 							<div class="col-4">
-								<p> <?php echo $Movies->getImage(); ?> </p>
+								<a href="<?php echo $Movies->getImage(); ?>" ></a>
 							</div>
 							<div class="col-8">
 								<table>
