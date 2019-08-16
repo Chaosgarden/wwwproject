@@ -1,4 +1,5 @@
 <?php
+
 	if((file_exists('config.php')))
 	{
 		include_once('config.php');
@@ -17,9 +18,11 @@
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
    $login_session = $row['email'];
-   
+   /*
    if(!isset($_SESSION['login_user'])){
       header("location:login.php");
       die();
-   }
+   
+   */
+   
 ?>
