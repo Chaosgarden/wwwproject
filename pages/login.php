@@ -1,8 +1,8 @@
  <?php
- require '../classes/admin.php';
+ require_once '../classes/admin.php';
  require_once '../config.php';
+ include_once('../scripts/session.php');
 
- session_start();
    
    if(isset($_POST['submit'])) {
       // username and password sent from form 

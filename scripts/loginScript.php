@@ -7,8 +7,6 @@ $lastNames = 	$_POST['lastName'];
 $emails = 		$_POST['email'];
 $credentials = 	$_POST['credential'];
 
-//var_dump($firstNames ,$credentials,$emails);
-
 session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
