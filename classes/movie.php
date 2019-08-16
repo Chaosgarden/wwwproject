@@ -8,10 +8,10 @@ class Movie
 	private $category;
 	private $yearOfWork;
 	private $movieLength;
-	private $link;
+	private $links;
  
 	function __construct( 
-		$title, $image, $fullDescription, $shortDescription, $category, $yearOfWork, $movieLength, $link ) 
+		$title, $image, $fullDescription, $shortDescription, $category, $yearOfWork, $movieLength, $links ) 
 	{
 		$this->title = $title;
 		$this->image = $image;
@@ -20,7 +20,7 @@ class Movie
 		$this->category = $category;
 		$this->yearOfWork = $yearOfWork;
 		$this->movieLength = $movieLength;
-		$this->link = $link;
+		$this->links = $links;
 	}
 	public function getTitle()
 	{
@@ -52,7 +52,7 @@ class Movie
 	}
 	function getLink()
 	{
-		return  $this->link;
+		return  $this->links;
 	}
 }
 //$first = new Movie("5", "JonWick", "0","89", "po", "o3", "Yes", "No" );
