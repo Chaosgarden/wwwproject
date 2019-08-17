@@ -8,11 +8,15 @@
 </head>
 <body>
 <?php    include_once('scripts/session.php'); ?>
+<<<<<<< HEAD
 <?php if($loggedIn == true)
 {
 	echo "pizza";
 }
 ?>
+=======
+
+>>>>>>> 1fa22dca05ca0c60049b47bd0b568476137a9ca4
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-2">
@@ -50,15 +54,25 @@
 				</select>
 			</div>
 		</div>
-		
-		<div class="col-2">
-			
-			<div class="row">
-				<span class="centerText"> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a> </span>
-			</div>
-			<div class="row">
-				<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
-			</div>
-		</div>
+		<?php if (!isset( $_SESSION['login_user']))
+			{ ?>	
+				<div class="col-2">					
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a> </span>
+					</div>
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
+					</div>
+				</div>
+		<?php }else{ ?> 
+					<div class="col-2">					
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/addMovie.php" value="add movies">add movies</a> </span>
+					</div>
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
+					</div>
+				</div>
+		<?php } ?>	
 	</div>
 </header>
