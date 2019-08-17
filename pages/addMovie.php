@@ -1,6 +1,5 @@
 <?php
     include('../scripts/session.php');
-
 ?>
 <html>
    

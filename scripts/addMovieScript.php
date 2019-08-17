@@ -1,5 +1,5 @@
 <?php
-require '../config.php';
+require_once '../config.php';
 	$empty = false;
 	if (isset($_POST['submit'])) 
 	{
