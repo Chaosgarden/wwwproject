@@ -3,14 +3,10 @@
  require_once '../config.php';
  include_once('../scripts/session.php');
 
-<<<<<<< HEAD
-   
-=======
    if (isset( $_SESSION['login_user']))
    {
 	   header("location: welcome.php");
    }
->>>>>>> 1fa22dca05ca0c60049b47bd0b568476137a9ca4
    if(isset($_POST['submit'])) {
       // username and password sent from form 
       

@@ -2,16 +2,10 @@
 include '/classes/movie.php';
 
 //mysql query
-<<<<<<< HEAD
-$sql = "SELECT * FROM movies";
-$result = $conn->query($sql);
-
-=======
 
 $sql = "SELECT * FROM movies";
 $result = $conn->query($sql);
 
->>>>>>> 1fa22dca05ca0c60049b47bd0b568476137a9ca4
 if ($result->num_rows > 0) 
 {
 	// data of each row

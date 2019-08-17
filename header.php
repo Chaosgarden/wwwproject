@@ -8,15 +8,7 @@
 </head>
 <body>
 <?php    include_once('scripts/session.php'); ?>
-<<<<<<< HEAD
-<?php if($loggedIn == true)
-{
-	echo "pizza";
-}
-?>
-=======
 
->>>>>>> 1fa22dca05ca0c60049b47bd0b568476137a9ca4
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-2">
