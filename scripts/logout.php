@@ -5,5 +5,5 @@
 	session_write_close();
 	session_regenerate_id(true);
     
-	header("location:login.php");
+	header("location:../pages/login.php");
 ?>
