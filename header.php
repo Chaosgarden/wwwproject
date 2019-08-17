@@ -8,11 +8,7 @@
 </head>
 <body>
 <?php    include_once('scripts/session.php'); ?>
-<?php if($loggedIn == true)
-{
-	echo "pizza";
-}
-?>
+
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-2">
@@ -50,15 +46,25 @@
 				</select>
 			</div>
 		</div>
-		
-		<div class="col-2">
-			
-			<div class="row">
-				<span class="centerText"> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a> </span>
-			</div>
-			<div class="row">
-				<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
-			</div>
-		</div>
+		<?php if (!isset( $_SESSION['login_user']))
+			{ ?>	
+				<div class="col-2">					
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a> </span>
+					</div>
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
+					</div>
+				</div>
+		<?php }else{ ?> 
+					<div class="col-2">					
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/addMovie.php" value="add movies">add movies</a> </span>
+					</div>
+					<div class="row">
+						<span class="centerText"> <a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> </span>
+					</div>
+				</div>
+		<?php } ?>	
 	</div>
 </header>
