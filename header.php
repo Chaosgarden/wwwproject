@@ -61,6 +61,17 @@
 					
 					<a href="/wwwproject/scripts/logout.php" value="Sign up">Sign out</a>
 				</div>
-		<?php } ?>	
+		<?php } ?>		
 	</div>
+	<?php if (isset( $_SESSION['login_user']))
+	{ ?>	
+		<div class="container-fluid">		
+			<div "col-12">
+				<input type ="button" value="reeee">
+				<input type ="button" value="reeeeeeeeeeeeee">
+				<input type ="button" value="rereeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
+
+			</div>
+		</div>
+	<?php } ?> 
 </header>
