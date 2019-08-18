@@ -59,7 +59,7 @@
 						
 				<br>
 					
-					<a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a>
+					<a href="/wwwproject/scripts/logout.php" value="Sign up">Sign out</a>
 				</div>
 		<?php } ?>	
 	</div>

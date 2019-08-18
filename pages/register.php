@@ -70,7 +70,6 @@ if (isset($_POST['submit']))
 <?php include '../header.php' ?>
 	
 	<div class="container">
-<<<<<<< HEAD
 		<div class="col-12" id="inputBox">
 			<h2>Create your Account</h2>
 			<p>to continue</p>
@@ -90,15 +89,6 @@ if (isset($_POST['submit']))
 				<input type="submit" name="submit" value="Submit">
 			</form>
 		</div>
-=======
-		<form action="../pages/register.php" method="post">
-			<input type="text" name="firstName" placeholder="Enter your name" required>
-			<input type="text" name="lastName" placeholder="Enter your family name" required>
-			<input type="password" name="credential" placeholder="Enter your password" required>
-			<input type="text" name="email" placeholder="Enter your email" required>
-			<input type="submit" name="submit" value="Submit">
-		</form>
->>>>>>> 704c21459e1de51de2031f8aaa6335beb8e89a22
 	</div>
 
 	
