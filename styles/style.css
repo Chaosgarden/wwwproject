@@ -4,13 +4,7 @@
 }
 .grid-container 
 {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	grid-template-rows: 100px 300px;
-	grid-gap: 5px;
-	background-color: #2196F3;
-	padding: 5px;
-	border:5px solid yellow;
+	
 }
 div
 {
@@ -24,13 +18,40 @@ div
 {
 	background-color: #f5f9fa;
 }
-.centerText
+#movieG
 {
-	width: 100%;
+	text-align: center;
+	width: 100%
+	padding-top: 0.5px;
+}
+#options
+{
+	text-align: center;
+	width: 100%
+	padding-top: 0.5px;
+}
+#signUpIn
+{
+	text-align: center;
+	width: 100%
+}
+#formLogin
+{
+	text-align: center;
+	background-color: #f5f9fa;
+}
+#inputBox
+{
+	background-color: #f5f9fa;
 	text-align: center;
 }
-.options
+#welcomeP
 {
+	background-color: #f5f9fa;
 	text-align: center;
-	
+}
+#registerP
+{
+	background-color: #f5f9fa;
+	text-align: center;
 }

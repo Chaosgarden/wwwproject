@@ -35,13 +35,20 @@
 
 <?php include '../header.php' ?>
 	
-	<div class="container">
-		<form action="../pages/login.php" method="post">
-			<input type="text" name="email" placeholder="Enter your email" required>
-			<input type="password" name="credential" placeholder="Enter your password" required>
-
+	<div class="container" >
+		<div class="col-12" id="formLogin">
+		<h2>Sign in</h2>
+		<p>to continue</p>
+		<form action="../pages/login.php" method="post" >
+			<input type="text" name="email" placeholder="E-Mail" required>
+			<br>
+			<br>
+			<input type="password" name="credential" placeholder="Password" required>
+			<br>
+			<br>
 			<input type="submit" name="submit" value="Submit">
 		</form>
+		</div>
 	</div>
 
 	

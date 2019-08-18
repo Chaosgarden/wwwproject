@@ -7,17 +7,38 @@
 <?php include '../header.php' ?>
 	
 	<div class="container">
-		<form action="../scripts/addMovieScript.php" method="post">		
-			<input type="text" name="title" placeholder="Enter your title" required>
-			<input type="text" name="image" placeholder="Enter your image url" required>
-			<input type="text" name="fullDescription" placeholder="Enter your description" required>
-			<input type="text" name="shortDescription" placeholder="Enter your short description" required>
-			<input type="text" name="category" placeholder="Enter your category" required>
-			<input type="text" name="yearOfWork" placeholder="Enter your yearOfWork" required>
-			<input type="text" name="movieLength" placeholder="Enter your length" required>
-			<input type="text" name="link" placeholder="Enter your trailer url" required>
-			<input type="submit" name="submit" value="Submit">
-		</form>
+		<div class="col-12" id="registerP">
+			<form action="../scripts/addMovieScript.php" method="post">	
+				<h2>Hello admin,</h2>
+				<p>please enter all the required information to continue</p>
+				<br>
+				<input type="text" name="title" placeholder="Movie Title" required>
+				<br>
+				<br>
+				<input type="text" name="fullDescription" placeholder="Full description" required>
+				<br>
+				<br>
+				<input type="text" name="shortDescription" placeholder="Short description" required>
+				<br>
+				<br>
+				<input type="text" name="category" placeholder="Category" required>
+				<br>
+				<br>
+				<input type="text" name="movieLength" placeholder="Duration" required>
+				<br>
+				<br>
+				<input type="text" name="yearOfWork" placeholder="Date of release" required>
+				<br>
+				<br>
+				<input type="text" name="image" placeholder="Image URL" required>
+				<br>
+				<br>
+				<input type="text" name="link" placeholder="Trailer URL" required>
+				<br>
+				<br>
+				<input type="submit" name="submit" value="Submit">
+			</form>
+		</div>
 	</div>
 
 	
