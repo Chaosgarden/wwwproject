@@ -1,6 +1,6 @@
  <?php
- require_once '../classes/admin.php';
- require_once '../config.php';
+ include_once '../classes/admin.php';
+ include_once '../config.php';
  include_once('../scripts/session.php');
 
    if (isset( $_SESSION['login_user']))
