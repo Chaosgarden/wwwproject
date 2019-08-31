@@ -1,4 +1,5 @@
 <?php
+	include('../header.php');
     include_once('../scripts/session.php');
 	include_once('../config.php');
 	
@@ -9,8 +10,16 @@
 		
 		while($row=$result->fetch_assoc()) 
 		{
-			echo $row["email"];
-			echo "<br>";
+		?>
+		<div class="container">
+			<div class="col-12">
+				<div class="row">
+					<p> <?php echo $row["email"];
+					echo "<br>"; ?></p>
+				</div>
+			</div>
+		</div>
+			<?php
 		}
 	}
 	$conn->close();

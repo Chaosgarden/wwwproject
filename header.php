@@ -18,8 +18,8 @@
 		<div class="col-8" id ="options">
 			<input type="input" placeholder="Movie Title"> 
 			<select name="category">
-				<option value="absurdist">Absurdist </option>
-				<option value="action">Action </option>
+				<option value="absurdist">Absurdist</option>
+				<option value="action">Action</option>
 				<option value="adventure">Adventure </option>
 				<option value="comedy">Comedy </option>
 				<option value="crime">Crime </option>
@@ -34,7 +34,7 @@
 				<option value="philosophical">Philosophical </option>
 				<option value="political">Political </option>
 				<option value="romance">Romance </option>
-				<option value="saga">Saga </option>
+				<option value="saga">Saga</option>
 				<option value="satire">Satire </option>
 				<option value="science fiction">Science fiction </option>
 				<option value="social">Social </option>
@@ -47,28 +47,28 @@
 		<?php if (!isset( $_SESSION['login_user']))
 			{ ?>	
 				<div class="col-2" id="signUpIn">		
-					<a href="/wwwproject/pages/register.php" value="Sign up">Sign up</a>
+					<a href="/wwwproject/pages/register.php" class="btn btn-primary" role="button" value="Sign up">Sign up</a>
 					
 					<br>
 					
-					<a href="/wwwproject/pages/login.php" value="Sign up">Sign in</a> 
+					<a href="/wwwproject/pages/login.php" class="btn btn-primary" role="button" value="Sign in">Sign in</a> 
 				</div>
 		<?php }else{ ?> 
 				<div class="col-2" id="signUpIn">
-					<a href="/wwwproject/pages/addMovie.php" value="add movies">Add Movie</a>
+					<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary" role="button" value="add movies">Add Movie</a>
 						
 				<br>
 					
-					<a href="/wwwproject/scripts/logout.php" value="Sign up">Sign out</a>
+					<a href="/wwwproject/scripts/logout.php" class="btn btn-primary" role="button" value="Sign out">Sign out</a>
 				</div>
 		<?php } ?>		
 	</div>
 	<?php if (isset( $_SESSION['login_user']))
 	{ ?>	
 		<div class="container-fluid">		
-			<div "col-12">
-				<a href="/wwwproject/pages/editProfile.php" value="Edit profile">Edit Profile</a>
-				<input type ="button" value="reeeeeeeeeeeeee">
+			<div "col-12" id="editPage">
+				<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Home Page</a>
+				<a href="/wwwproject/pages/editProfile.php" class="btn btn-primary" role="button" value="Edit profile">Edit Profile</a>
 				<input type ="button" value="rereeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
 
 			</div>

@@ -55,16 +55,16 @@ else
 				<input type="text" name="category" placeholder="Category" required>
 				<br>
 				<br>
-				<input type="text" name="movieLength" placeholder="Duration" required>
+				<input type="number" name="movieLength" placeholder="Duration" required>
 				<br>
 				<br>
-				<input type="text" name="yearOfWork" placeholder="Date of release" required>
+				<input type="date" name="yearOfWork" placeholder="Date of release" required>
 				<br>
 				<br>
-				<input type="text" name="image" placeholder="Image URL" required>
+				<input type="url" name="image" placeholder="Image URL" required>
 				<br>
 				<br>
-				<input type="text" name="link" placeholder="Trailer URL" required>
+				<input type="url" name="link" placeholder="Trailer URL" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">

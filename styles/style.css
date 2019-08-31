@@ -18,18 +18,22 @@ div
 {
 	background-color: #f5f9fa;
 }
+
 #movieG
 {
+	padding-top: 1%;
 	text-align: center;
 	width: 100%
 }
 #options
 {
+	padding-top: 1.3%;
 	text-align: center;
 	width: 100%
 }
 #signUpIn
 {
+	
 	text-align: center;
 	width: 100%
 }
@@ -49,6 +53,11 @@ div
 	text-align: center;
 }
 #registerP
+{
+	background-color: #f5f9fa;
+	text-align: center;
+}
+#editPage
 {
 	background-color: #f5f9fa;
 	text-align: center;
