@@ -12,17 +12,17 @@ class admin
 		$firstName, $lastName, $email, $credential
 	)
 	{
-		$this->firstName = $firstName;
-		$this->lastName = $lastName;
-		$this->email = $email;
-		$this->credential = $credential;
+		$this->firstName=$firstName;
+		$this->lastName=$lastName;
+		$this->email=$email;
+		$this->credential=$credential;
 	}
 	
 	function showAdmins()
 	{
-		$sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
-		$result = $conn->query($sql);
-		$row = $result->fetch_array(MYSQLI_ASSOC); 
+		$sql="SELECT id FROM admins WHERE email='$myEmail' and credential='$myPassword'";
+		$result=$conn->query($sql);
+		$row=$result->fetch_array(MYSQLI_ASSOC); 
 		
 		echo $row;
 	}

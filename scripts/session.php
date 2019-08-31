@@ -12,12 +12,12 @@
 	if (isset( $_SESSION['login_user'])) 
 	{
   
-		$user_check = $_SESSION['login_user'];   
-		$ses_sql = "select email from admins where email = '$user_check' ";
-		$result = $conn->query($ses_sql);
+		$user_check=$_SESSION['login_user'];   
+		$ses_sql="select email from admins where email='$user_check' ";
+		$result=$conn->query($ses_sql);
 		
-		$row = $result->fetch_array(MYSQLI_ASSOC); 
-		$login_session = $row['email'];
+		$row=$result->fetch_array(MYSQLI_ASSOC); 
+		$login_session=$row['email'];
 	}
 
 ?>

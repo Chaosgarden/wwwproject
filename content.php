@@ -3,13 +3,13 @@ include '/classes/movie.php';
 
 //mysql query
 
-$sql = "SELECT * FROM movies";
-$result = $conn->query($sql);
+$sql="SELECT * FROM movies";
+$result=$conn->query($sql);
 
 if ($result->num_rows > 0) 
 {
 	// data of each row
-	while($row = $result->fetch_assoc()) 
+	while($row=$result->fetch_assoc()) 
 	{
 		
 		?>
@@ -18,7 +18,7 @@ if ($result->num_rows > 0)
 	
 				<!--flexbox is prob a better way, whitespace placeholder(prob not the best way-->		
 			<?php
-				$Movies = new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
+				$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
 			?>		
 				<div class="col-12">
 					<div class="row">

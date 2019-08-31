@@ -67,7 +67,7 @@
 	{ ?>	
 		<div class="container-fluid">		
 			<div "col-12">
-				<input type ="button" value="reeee">
+				<a href="/wwwproject/pages/editProfile.php" value="Edit profile">Edit Profile</a>
 				<input type ="button" value="reeeeeeeeeeeeee">
 				<input type ="button" value="rereeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
 
