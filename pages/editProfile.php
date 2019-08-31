@@ -26,11 +26,12 @@
 		$email= $conn->real_escape_string($_POST['email']);
 		$credential= $conn->real_escape_string($_POST['credential']);
 
-		$sql="UPDATE admins SET firstName='$firstName' ,lastName='$lastName' ,email='$email' ,credential='$credential'";
+		$sql="UPDATE admins SET firstName='$firstName' ,lastName='$lastName' ,email='$email' ,credential='$credential' where email='".$_SESSION['login_user']."' ";
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
 		}
+		$conn->close();
    }
    ?>
 
