@@ -13,8 +13,10 @@
 	{
   
 		$user_check = $_SESSION['login_user'];   
-		$ses_sql = mysqli_query($conn,"select email from admins where email = '$user_check' ");	
-		$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);   
+		$ses_sql = "select email from admins where email = '$user_check' ";
+		$result = $conn->query($ses_sql);
+		
+		$row = $result->fetch_array(MYSQLI_ASSOC); 
 		$login_session = $row['email'];
 	}
 

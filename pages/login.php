@@ -15,8 +15,7 @@
 	  
       $sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
 	  $loggedIn = true;
-      $result = mysqli_query($conn,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	  $result = $conn->query($sql);
       $count = mysqli_num_rows($result);
       
       // If result matched $myEmail and $myPassword, table row must be 1 row

@@ -39,7 +39,7 @@ if (isset($_POST['submit']))
 			{
 				//query for existing user
 				$sql = "SELECT * FROM admins WHERE email='$email'";
-				$result = mysqli_query($conn,$sql);
+				$result = $conn->query($sql);
 				$resultCheck = mysqli_num_rows($result);
 				
 				
@@ -56,7 +56,7 @@ if (isset($_POST['submit']))
 					$hashedCreds = password_hash($credential, PASSWORD_DEFAULT);
 					$sql = "INSERT INTO admins (firstName, lastName, email, credential)
 							values ('$firstName', '$lastName', '$email', '$credential')";
-					mysqli_query($conn, $sql);	
+					$result = $conn->query($sql);
 					echo $resultMessage='<div class="alert alert-danger">Success</div>';
 					$conn->close();
 				}

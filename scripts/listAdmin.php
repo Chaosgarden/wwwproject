@@ -5,8 +5,7 @@
 	if (isset( $_SESSION['login_user']))
 	{  
 		$sql = "SELECT * FROM admins";
-		$result = mysqli_query($conn,$sql);
-		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$result = $conn->query($sql);
 		
 		while($row = $result->fetch_assoc()) 
 		{

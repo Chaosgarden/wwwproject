@@ -21,8 +21,8 @@ class admin
 	function showAdmins()
 	{
 		$sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
-		$result = mysqli_query($conn,$sql);
-		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$result = $conn->query($sql);
+		$row = $result->fetch_array(MYSQLI_ASSOC); 
 		
 		echo $row;
 	}
