@@ -11,9 +11,10 @@ if (isset($_POST['submit']))
 	//Check for empty fields
 	if (empty($firstName) || empty($lastName))
 	{
-		header("Location: ../pages/register.php?signup=empty");
+		
+		echo $resultMessage='<div class="alert alert-danger">Inputs are empty</div>';
 		$conn->close();
-		exit();
+		
 	}
 	else
 	{
@@ -21,18 +22,18 @@ if (isset($_POST['submit']))
 		if(	!preg_match("/^[a-zA-Z]*$/",$firstName) || 
 			!preg_match("/^[a-zA-Z]*$/",$lastName))
 		{
-			header("Location: ../pages/register.php?signup=invalid");
+				echo $resultMessage='<div class="alert alert-danger">Invalid characters</div>';
 			$conn->close();
-			exit();
+			
 		}
 		else
 		{
 			//check if email exist
 			if(!filter_var($email, FILTER_VALIDATE_EMAIL))
 			{
-				header("Location: ../pages/register.php?signup=email");
+				echo $resultMessage='<div class="alert alert-danger">Invalid email</div>';
 				$conn->close();
-				exit();
+				
 			}
 			else
 			{
@@ -44,9 +45,10 @@ if (isset($_POST['submit']))
 				
 				if($resultCheck > 0)
 				{
-					header("Location: ../pages/register.php?signup=taken");
+					echo $resultMessage='<div class="alert alert-danger">Email has been taken</div>';
+
 					$conn->close();
-					exit();
+					
 				}
 				else
 				{
@@ -54,13 +56,9 @@ if (isset($_POST['submit']))
 					$hashedCreds = password_hash($credential, PASSWORD_DEFAULT);
 					$sql = "INSERT INTO admins (firstName, lastName, email, credential)
 							values ('$firstName', '$lastName', '$email', '$credential')";
-					mysqli_query($conn, $sql);
-					
-				
-					header("Location: ../pages/register.php?signup=success");
+					mysqli_query($conn, $sql);	
+					echo $resultMessage='<div class="alert alert-danger">Success</div>';
 					$conn->close();
-					exit();			
-					
 				}
 			}
 		}	
@@ -73,7 +71,7 @@ if (isset($_POST['submit']))
 		<div class="col-12" id="inputBox">
 			<h2>Create your Account</h2>
 			<p>to continue</p>
-			<form action="../scripts/registerScript.php" method="post">
+			<form action="register.php" method="post">
 				<input  type="text" name="firstName" placeholder="Firstname" required>
 				<br>
 				<br>
