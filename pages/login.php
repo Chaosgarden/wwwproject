@@ -24,10 +24,12 @@
       if($count == 1) {
 		
         $_SESSION['login_user'] = $myEmail; 
+		
         header("location: welcome.php");
 		$conn->close();
       }else {
-         echo "<script> alert('email or password wrong'); </script>";
+
+         echo $resultMessage='<div class="alert alert-danger">Email or password is wrong</div>';
 		 $conn->close();
       }
    }
