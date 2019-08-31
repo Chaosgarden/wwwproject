@@ -3,16 +3,16 @@ include_once('../scripts/session.php');
 include_once '../config.php';
 	if (isset($_POST['submit'])) 
 	{
-		$title = mysqli_real_escape_string($conn,$_POST['title']);
-		$movieImage = mysqli_real_escape_string($conn,$_POST['image']);
-		$fullDescription = mysqli_real_escape_string($conn,$_POST['fullDescription']);
-		$shortDescription = mysqli_real_escape_string($conn,$_POST['shortDescription']);
-		$category = mysqli_real_escape_string($conn,$_POST['category']);
-		$yearOfWork = mysqli_real_escape_string($conn,$_POST['yearOfWork']);
-		$movieLength = mysqli_real_escape_string($conn,$_POST['movieLength']);
-		$link = mysqli_real_escape_string($conn,$_POST['link']);
+		$title= $conn->real_escape_string($_POST['title']);
+		$movieImage=$conn->real_escape_string($_POST['image']);
+		$fullDescription=$conn->real_escape_string($_POST['fullDescription']);
+		$shortDescription=$conn->real_escape_string($_POST['shortDescription']);
+		$category=$conn->real_escape_string($_POST['category']);
+		$yearOfWork=$conn->real_escape_string($_POST['yearOfWork']);
+		$movieLength=$conn->real_escape_string($_POST['movieLength']);
+		$link=$conn->real_escape_string($_POST['link']);
 		
-		$sql = "INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
+		$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
 			 values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$link')";
 			
 		if ($conn->query($sql))

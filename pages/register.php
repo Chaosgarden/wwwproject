@@ -3,10 +3,10 @@ if (isset($_POST['submit']))
 {
 	include_once '../config.php';
 	
-	$firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
-	$lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
-	$credential = mysqli_real_escape_string($conn, $_POST['credential']);
-	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$firstName=$conn->real_escape_string( $_POST['firstName']);
+	$lastName=$conn->real_escape_string( $_POST['lastName']);
+	$credential=$conn->real_escape_string( $_POST['credential']);
+	$email=$conn->real_escape_string( $_POST['email']);
 	//Error handlers
 	//Check for empty fields
 	if (empty($firstName) || empty($lastName))
@@ -38,9 +38,9 @@ if (isset($_POST['submit']))
 			else
 			{
 				//query for existing user
-				$sql = "SELECT * FROM admins WHERE email='$email'";
-				$result = $conn->query($sql);
-				$resultCheck = mysqli_num_rows($result);
+				$sql="SELECT * FROM admins WHERE email='$email'";
+				$result=$conn->query($sql);
+				$resultCheck=mysqli_num_rows($result);
 				
 				
 				if($resultCheck > 0)
@@ -53,10 +53,10 @@ if (isset($_POST['submit']))
 				else
 				{
 					//hashing the pw
-					$hashedCreds = password_hash($credential, PASSWORD_DEFAULT);
-					$sql = "INSERT INTO admins (firstName, lastName, email, credential)
+					$hashedCreds=password_hash($credential, PASSWORD_DEFAULT);
+					$sql="INSERT INTO admins (firstName, lastName, email, credential)
 							values ('$firstName', '$lastName', '$email', '$credential')";
-					$result = $conn->query($sql);
+					$result=$conn->query($sql);
 					echo $resultMessage='<div class="alert alert-danger">Success</div>';
 					$conn->close();
 				}

@@ -10,19 +10,19 @@
    if(isset($_POST['submit'])) {
       // username and password sent from form 
       
-      $myEmail = mysqli_real_escape_string($conn,$_POST['email']);
-      $myPassword = mysqli_real_escape_string($conn,$_POST['credential']); 
+      $myEmail=$conn->real_escape_string($_POST['email']);
+      $myPassword=$conn->real_escape_string($_POST['credential']);
 	  
-      $sql = "SELECT id FROM admins WHERE email = '$myEmail' and credential = '$myPassword'";
-	  $loggedIn = true;
-	  $result = $conn->query($sql);
-      $count = mysqli_num_rows($result);
+      $sql="SELECT id FROM admins WHERE email='$myEmail' and credential='$myPassword'";
+	  $loggedIn=true;
+	  $result=$conn->query($sql);
+      $count=mysqli_num_rows($result);
       
       // If result matched $myEmail and $myPassword, table row must be 1 row
 		
       if($count == 1) {
 		
-        $_SESSION['login_user'] = $myEmail; 
+        $_SESSION['login_user']=$myEmail; 
 		
         header("location: welcome.php");
 		$conn->close();
