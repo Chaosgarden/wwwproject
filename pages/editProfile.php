@@ -18,6 +18,7 @@
 				$credential=$row["credential"];
 			}
 		}
+		$conn->close();
    }
    if (isset($_POST['submit'])) 
    {
@@ -33,6 +34,7 @@
 		}
 		$conn->close();
    }
+  
    ?>
 
 <?php include '../header.php' ?>

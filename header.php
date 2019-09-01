@@ -48,17 +48,13 @@
 			{ ?>	
 				<div class="col-2" id="signUpIn">		
 					<a href="/wwwproject/pages/register.php" class="btn btn-primary" role="button" value="Sign up">Sign up</a>
-					
-					<br>
-					
+					<br>					
 					<a href="/wwwproject/pages/login.php" class="btn btn-primary" role="button" value="Sign in">Sign in</a> 
 				</div>
 		<?php }else{ ?> 
 				<div class="col-2" id="signUpIn">
-					<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary" role="button" value="add movies">Add Movie</a>
-						
-				<br>
-					
+					<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary" role="button" value="add movies">Add Movie</a>					
+					<br>		
 					<a href="/wwwproject/scripts/logout.php" class="btn btn-primary" role="button" value="Sign out">Sign out</a>
 				</div>
 		<?php } ?>		

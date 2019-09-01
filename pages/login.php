@@ -20,17 +20,28 @@
       
       // If result matched $myEmail and $myPassword, table row must be 1 row
 		
-      if($count == 1) {
-		
-        $_SESSION['login_user']=$myEmail; 
-		
-        header("location: welcome.php");
-		$conn->close();
-      }else {
-
-         echo $resultMessage='<div class="alert alert-danger">Email or password is wrong</div>';
-		 $conn->close();
-      }
+		if($count == 1) 
+		{	
+			$_SESSION['login_user']=$myEmail; 			
+			header("location: welcome.php");
+			$conn->close();
+		}else 
+		{
+			$sql="SELECT id FROM admins WHERE email='$myEmail'";
+			$result=$conn->query($sql);
+			$resultCheck=mysqli_num_rows($result);		
+			if($resultCheck == 1)
+			{
+				echo $resultMessage='<div class="alert alert-danger">Email or password is wrong</div>';
+				$conn->close();				
+			}
+			else
+			{
+				echo $resultMessage='<div class="alert alert-danger">Email does not exist</div>';
+				$conn->close();					
+			}
+		}
+			
    }
 ?>
 
