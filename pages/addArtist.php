@@ -50,13 +50,13 @@ else
 				<input type="text" name="nationality" placeholder="nationality" required>
 				<br>
 				<br>
-				<input type="text" name="yearOfBirth" placeholder="yearOfBirth" required>
+				<input type="date" name="yearOfBirth" placeholder="yearOfBirth" required>
 				<br>
 				<br>
-				<input type="number" name="yearofDeath" placeholder="yearofDeath" required>
+				<input type="date" name="yearofDeath" placeholder="yearofDeath" required>
 				<br>
 				<br>
-				<input type="date" name="biography" placeholder="biography" required>
+				<input type="text" name="biography" placeholder="biography" required>
 				<br>
 				<br>
 				<input type="url" name="picture" placeholder="picture" required>

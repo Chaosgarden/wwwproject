@@ -34,7 +34,7 @@ if ($result->num_rows > 0)
 								</tr>
 								<tr>
 									<td>
-										<p> <?php echo $Movies->getMovieLength(); ?> - <?php echo $Movies->getCategory(); ?> </p>
+										<p> <?php echo $Movies->getMovieLength(); ?>min - <?php echo $Movies->getCategory(); ?> </p>
 									</td>
 								</tr>
 								<tr>
