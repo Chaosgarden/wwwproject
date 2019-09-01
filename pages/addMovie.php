@@ -17,8 +17,7 @@ include_once '../config.php';
 			
 		if ($conn->query($sql))
 		{		
-			echo $resultMessage='<div class="alert alert-success">Success!</div>';
-			
+			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
 		}
 		else
 		{

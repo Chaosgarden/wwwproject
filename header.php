@@ -47,7 +47,7 @@
 			<div "col-12" id="editPage">
 				<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Home Page</a>
 				<a href="/wwwproject/pages/editProfile.php" class="btn btn-primary" role="button" value="Edit profile">Edit Profile</a>
-				<input type ="button" value="rereeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
+				<a href="/wwwproject/pages/addArtist.php" class="btn btn-primary" role="button" value="Add Artist">Add Artist</a>
 
 			</div>
 		</div>

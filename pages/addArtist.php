@@ -1,6 +1,7 @@
 <?php
 include_once('../scripts/session.php');
 include_once '../config.php';
+
 	if (isset($_POST['submit'])) 
 	{
 		$firstName=$conn->real_escape_string($_POST['firstName']);
@@ -13,7 +14,7 @@ include_once '../config.php';
 			
 		$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearofDeath, biography, picture)
 			 values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
-			
+		var_dump($sql);
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
@@ -21,8 +22,7 @@ include_once '../config.php';
 		else
 		{
 			echo $resultMessage='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
-		}
-			
+		}		
 	$conn->close();
 	}
 		
@@ -37,7 +37,7 @@ else
 	
 	<div class="container">
 		<div class="col-12" id="registerP">
-			<form action="addMovie.php" method="post">	
+			<form action="addArtist.php" method="post">	
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
@@ -59,7 +59,7 @@ else
 				<input type="text" name="biography" placeholder="biography" required>
 				<br>
 				<br>
-				<input type="url" name="picture" placeholder="picture" required>
+				<input type="text" name="picture" placeholder="picture" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">
