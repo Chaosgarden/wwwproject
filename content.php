@@ -1,5 +1,5 @@
 <?php	
-include '/classes/movie.php';
+include_once '/classes/movie.php';
 
 //mysql query
 

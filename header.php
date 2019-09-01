@@ -16,12 +16,15 @@
 		</div>
 		
 		<div class="col-8" id ="options">
-			<input type="input" placeholder="Movie Title"> 
-			<select name="category">
-				<option value="movie">Movie</option>
-				<option value="artist">Artist</option>
-				<option value="all">All</option>
-			</select>
+			<form action="/wwwproject/pages/search.php" method="post">
+				<input type="input" name="searchText" placeholder="Movie Title"> 
+				<select name="searchType" >
+					<option value="movie">Movie</option>
+					<option value="artist">Artist</option>
+					<option value="all">All</option>
+				</select>
+				<input type="submit" name="submit" value="Search">
+			</form>
 		</div>
 		<?php if (!isset( $_SESSION['login_user']))
 			{ ?>	
