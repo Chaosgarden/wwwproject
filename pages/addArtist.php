@@ -3,22 +3,20 @@ include_once('../scripts/session.php');
 include_once '../config.php';
 	if (isset($_POST['submit'])) 
 	{
-		$title= $conn->real_escape_string($_POST['title']);
-		$movieImage=$conn->real_escape_string($_POST['image']);
-		$fullDescription=$conn->real_escape_string($_POST['fullDescription']);
-		$shortDescription=$conn->real_escape_string($_POST['shortDescription']);
-		$category=$conn->real_escape_string($_POST['category']);
-		$yearOfWork=$conn->real_escape_string($_POST['yearOfWork']);
-		$movieLength=$conn->real_escape_string($_POST['movieLength']);
-		$link=$conn->real_escape_string($_POST['link']);
-		
-		$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
-			 values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$link')";
+		$firstName=$conn->real_escape_string($_POST['firstName']);
+		$lastName=$conn->real_escape_string($_POST['lastName']);
+		$nationality=$conn->real_escape_string($_POST['nationality']);
+		$yearOfBirth=$conn->real_escape_string($_POST['yearOfBirth']);
+		$yearofDeath=$conn->real_escape_string($_POST['yearofDeath']);
+		$biography=$conn->real_escape_string($_POST['biography']);
+		$picture=$conn->real_escape_string($_POST['picture']);
+			
+		$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearofDeath, biography, picture)
+			 values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
 			
 		if ($conn->query($sql))
 		{		
-			echo $resultMessage='<div class="alert alert-success">Success!</div>';
-			
+			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
 		}
 		else
 		{
@@ -43,28 +41,25 @@ else
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
-				<input type="text" name="title" placeholder="Movie Title" required>
+				<input type="text" name="firstName" placeholder="firstName" required>
 				<br>
 				<br>
-				<input type="text" name="fullDescription" placeholder="Full description" required>
+				<input type="text" name="lastName" placeholder="lastName" required>
 				<br>
 				<br>
-				<input type="text" name="shortDescription" placeholder="Short description" required>
+				<input type="text" name="nationality" placeholder="nationality" required>
 				<br>
 				<br>
-				<input type="text" name="category" placeholder="Category" required>
+				<input type="text" name="yearOfBirth" placeholder="yearOfBirth" required>
 				<br>
 				<br>
-				<input type="number" name="movieLength" placeholder="Duration" required>
+				<input type="number" name="yearofDeath" placeholder="yearofDeath" required>
 				<br>
 				<br>
-				<input type="date" name="yearOfWork" placeholder="Date of release" required>
+				<input type="date" name="biography" placeholder="biography" required>
 				<br>
 				<br>
-				<input type="url" name="image" placeholder="Image URL" required>
-				<br>
-				<br>
-				<input type="url" name="link" placeholder="Trailer URL" required>
+				<input type="url" name="picture" placeholder="picture" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">

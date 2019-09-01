@@ -57,7 +57,7 @@ if (isset($_POST['submit']))
 					$sql="INSERT INTO admins (firstName, lastName, email, credential)
 							values ('$firstName', '$lastName', '$email', '$credential')";
 					$result=$conn->query($sql);
-					echo $resultMessage='<div class="alert alert-danger">Success</div>';
+					echo $resultMessage='<div class="alert alert-success">Success</div>';
 					$conn->close();
 				}
 			}
