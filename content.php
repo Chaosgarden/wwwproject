@@ -23,7 +23,7 @@ if ($result->num_rows > 0)
 				<div class="col-12">
 					<div class="row">
 						<div class="col-4">
-							<p> <?php echo $Movies->getImage(); ?> </p>
+							<img src="<?php echo $Movies->getImage(); ?>">  </img>
 						</div>
 						<div class="col-8">
 							<table>
