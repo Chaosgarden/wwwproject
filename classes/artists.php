@@ -1,5 +1,5 @@
 <?php
-class Movie
+class Artist
 {
 	private $firstName;
  	private $lastName;	
@@ -47,10 +47,6 @@ class Movie
 	function getPicture()
 	{
 		return  $this->picture;
-	}
-	function getLink()
-	{
-		return  $this->links;
 	}
 }
 

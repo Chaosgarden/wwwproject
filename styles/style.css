@@ -18,7 +18,21 @@ div
 {
 	background-color: #f5f9fa;
 }
-
+.table
+{
+	border-top: none;
+	
+}
+.borderless th, .borderless td
+{
+	border: none;
+}
+.table-responsive
+{
+	border: none;
+	border-top: none;
+	border-bottom: none;
+}
 #movieG
 {
 	padding-top: 0.6%;
@@ -85,4 +99,10 @@ div
 #btnOut
 {
 	width: 40%;
+}
+#contentImg
+{
+	margin-left: 21%;
+	width: 200px;
+	height: 320px;
 }

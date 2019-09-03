@@ -59,7 +59,7 @@ else
 				<input type="text" name="biography" placeholder="biography" required>
 				<br>
 				<br>
-				<input type="text" name="picture" placeholder="picture" required>
+				<input type="url" name="picture" placeholder="picture" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">

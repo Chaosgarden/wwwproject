@@ -76,12 +76,62 @@ if ($result=$conn->query($sql))
 				<!--whitespace placeholder(prob not the best way-->
 			</div>
 		</section>
-<?php		}
+	<?php		} ?>
+			<?php
 			if($searchType == "artist")
 			{	
+			$Artists=new Artist($row["firstName"], $row["lastName"],$row["nationality"],$row["yearOfBirth"], $row["yearofDeath"], $row["biography"],$row["picture"]);
+			?>
+			<section class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-4">
+							<img id="contentImg" src="<?php echo $Artists->getPicture(); ?>">  </img>
+						</div>
+						<div class="col-8">
+							<div class="table-responsive">
+								<table class="table borderless">
+									<tr>
+										<th>
+										<p> <?php echo $Artists->getFirstName(); ?> </p>
+										</th>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Artists->getLastName(); ?></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Artists->getNationality(); ?> </p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Artists->getYearOfBirth(); ?> </p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Artists->getYearOfDeath(); ?> </p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p> <?php echo $Artists->getBiography(); ?> </p>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--whitespace placeholder(prob not the best way-->
+			</div>
+		</section>
 				
-			}
-?>		
+	<?php		}	?>		
 <?php include '../footer.php' ?>
 <?php	
 	}
