@@ -14,7 +14,6 @@
       $myPassword=$conn->real_escape_string($_POST['credential']);
 	  
       $sql="SELECT id FROM admins WHERE email='$myEmail' and credential='$myPassword'";
-	  $loggedIn=true;
 	  $result=$conn->query($sql);
       $count=mysqli_num_rows($result);
       
