@@ -5,18 +5,18 @@ class Artist
  	private $lastName;	
 	private $nationality;
 	private $yearOfBirth;
-	private $yearofDeath;
+	private $yearOfDeath;
 	private $biography;
 	private $picture;
  
 	function __construct( 
-		$firstName, $lastName, $nationality, $yearOfBirth, $category, $yearofDeath, $biography, $picture ) 
+		$firstName, $lastName, $nationality, $yearOfBirth, $yearOfDeath, $biography, $picture ) 
 	{
 		$this->firstName=$firstName;
 		$this->lastName=$lastName;
 		$this->nationality=$nationality;
 		$this->yearOfBirth=$yearOfBirth;
-		$this->yearofDeath=$yearofDeath;
+		$this->yearOfDeath=$yearOfDeath;
 		$this->biography=$biography;
 		$this->picture=$picture;
 	}
@@ -38,7 +38,7 @@ class Artist
 	}
 	function getYearOfDeath()
 	{
-		return  $this->yearofDeath;
+		return  $this->yearOfDeath;
 	}
 	function getBiography()
 	{

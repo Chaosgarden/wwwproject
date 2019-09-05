@@ -2,6 +2,7 @@
 include_once('../scripts/session.php');
 include_once '../config.php';
 include_once '../classes/movie.php';
+include_once '../classes/artist.php';
 
 	if (isset($_POST['submit'])) 
 	{
@@ -17,7 +18,7 @@ include_once '../classes/movie.php';
 		}
 		if($searchType == "artist")
 		{
-			$sql="SELECT * FROM artist where firstName='$searchText' OR lastName='$searchText ";
+			$sql="SELECT * FROM artist where firstName='$searchText'";
 			$result=$conn->query($sql);	
 		}	
 	}
@@ -80,7 +81,7 @@ if ($result=$conn->query($sql))
 			<?php
 			if($searchType == "artist")
 			{	
-			$Artists=new Artist($row["firstName"], $row["lastName"],$row["nationality"],$row["yearOfBirth"], $row["yearofDeath"], $row["biography"],$row["picture"]);
+				$Artists=new Artist($row["firstName"], $row["lastName"],$row["nationality"],$row["yearOfBirth"], $row["yearOfDeath"], $row["biography"],$row["picture"]);
 			?>
 			<section class="container">
 			<div class="row">
