@@ -42,28 +42,28 @@ else
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
-				<input type="text" name="title" placeholder="Movie Title" required>
+				<input type="text" name="title" pattern="[A-Za-z0-9]{2.}$" placeholder="Movie Title" required>
 				<br>
 				<br>
-				<input type="text" name="fullDescription" placeholder="Full description" required>
+				<input type="text" name="fullDescription" pattern="[A-Za-z0-9]{2.}$" placeholder="Full description" required>
 				<br>
 				<br>
-				<input type="text" name="shortDescription" placeholder="Short description" required>
+				<input type="text" name="shortDescription" pattern="[A-Za-z0-9]{2.}$" placeholder="Short description" required>
 				<br>
 				<br>
-				<input type="text" name="category" placeholder="Category" required>
+				<input type="text" name="category" pattern="[A-Za-z]{2.}$" placeholder="Category" required>
 				<br>
 				<br>
-				<input type="number" name="movieLength" placeholder="Duration" required>
+				<input type="number" name="movieLength" pattern="[0-9]{2.}" placeholder="Duration" required>
 				<br>
 				<br>
 				<input type="date" name="yearOfWork" placeholder="Date of release" required>
 				<br>
 				<br>
-				<input type="url" name="image" placeholder="Image URL" required>
+				<input type="url" name="image" pattern="https?://.+" placeholder="Image URL" required>
 				<br>
 				<br>
-				<input type="url" name="link" placeholder="Trailer URL" required>
+				<input type="url" name="link" pattern="https?://.+" placeholder="Trailer URL" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">

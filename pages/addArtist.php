@@ -41,13 +41,13 @@ else
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
-				<input type="text" name="firstName" placeholder="firstName" required>
+				<input type="text" name="firstName" pattern="[A-Za-z]{2.}$" placeholder="firstName" required>
 				<br>
 				<br>
-				<input type="text" name="lastName" placeholder="lastName" required>
+				<input type="text" name="lastName" pattern="[A-Za-z]{2.}$" placeholder="lastName" required>
 				<br>
 				<br>
-				<input type="text" name="nationality" placeholder="nationality" required>
+				<input type="text" name="nationality" pattern="[A-Za-z]{2.}$" placeholder="nationality" required>
 				<br>
 				<br>
 				<input type="date" name="yearOfBirth" placeholder="yearOfBirth" required>
@@ -56,10 +56,10 @@ else
 				<input type="date" name="yearofDeath" placeholder="yearofDeath" required>
 				<br>
 				<br>
-				<input type="text" name="biography" placeholder="biography" required>
+				<input type="text" name="biography" pattern="[A-Za-z0-9]{2.}$" placeholder="biography" required>
 				<br>
 				<br>
-				<input type="url" name="picture" placeholder="picture" required>
+				<input type="url" pattern="https?://.+" name="picture" placeholder="picture" required>
 				<br>
 				<br>
 				<input type="submit" name="submit" value="Submit">

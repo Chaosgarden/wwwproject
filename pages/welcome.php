@@ -11,12 +11,8 @@
 			<h1>Welcome <?php echo $login_session; ?> </h1> 
 			<br>
 			<section class="container">
-				<a href="../pages/addMovie.php" class="btn btn-primary">Movie Registration</a>
-				<a href="../scripts/listAdmin.php" class="btn btn-primary">Administrator List</a>
-				
-				<form action="../scripts/deleteAccount.php" onsubmit="return confirm('Are you certain of this action?');">
-					<input type="submit" value="delete" class="btn btn-primary">
-				</form>
+				<p>To add a Movie press<br><a href="/wwwproject/pages/accountManagement.php" class="btn btn-primary" role="button" value="Edit profile">My Account</a></p>
+				<p>To see list of admins press<br><a href="../scripts/listAdmin.php" class="btn btn-primary">Admin List</a></p>
 			</section>
 		</body>
 	</div>

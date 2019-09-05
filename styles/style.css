@@ -91,7 +91,7 @@ div
 {
 	width: 40%;
 }
-#btnAdd
+#btnHome
 {
 	margin-bottom: 5px;
 	width: 40%;
@@ -105,4 +105,9 @@ div
 	margin-left: 21%;
 	width: 200px;
 	height: 320px;
+}
+#menuP
+{
+	background-color: #f5f9fa;
+	text-align: center;
 }

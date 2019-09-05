@@ -34,9 +34,10 @@
 				</div>
 		<?php }else{ ?> 
 				<div class="col-2" id="signUpIn">
-					<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary" id="btnAdd" role="button" value="add movies">Add Movie</a>					
-					<br>		
-					<a href="/wwwproject/scripts/logout.php" class="btn btn-primary" id="btnOut" role="button" value="Sign out">Sign out</a>
+					<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" id="btnHome" role="button" value="homePage">Home Page</a>
+					<br>
+					<a href="/wwwproject/scripts/logout.php" class="btn btn-primary"  id="btnOut" role="button" value="Sign out">Sign out</a>		
+					
 				</div>
 		<?php } ?>		
 	</div>
@@ -44,10 +45,8 @@
 	{ ?>	
 		<div class="container-fluid">		
 			<div "col-12" id="editPage">
-				<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Home Page</a>
-				<a href="/wwwproject/pages/editProfile.php" class="btn btn-primary" role="button" value="Edit profile">Edit Profile</a>
-				<a href="/wwwproject/pages/addArtist.php" class="btn btn-primary" role="button" value="Add Artist">Add Artist</a>
-
+				<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary"  role="button" value="add movies">Add Movie</a>
+				<a href="/wwwproject/pages/addArtist.php" class="btn btn-primary"  role="button" value="Add Artist">Add Artist</a>
 			</div>
 		</div>
 	<?php } ?> 
