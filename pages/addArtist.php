@@ -21,7 +21,7 @@ include_once '../config.php';
 		}
 		else
 		{
-			echo $resultMessage='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+			echo $resultMessage='<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again later.</div>';
 		}		
 	$conn->close();
 	}

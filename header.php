@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="/wwwproject/styles/style.css">
 </head>
-<body>
+<body id="headerBody">
 <?php    include_once('scripts/session.php'); ?>
 
 <header class="container-fluid">
@@ -43,7 +43,7 @@
 	</div>
 	<?php if (isset( $_SESSION['login_user']))
 	{ ?>	
-		<div class="container-fluid">		
+		<div class="container-fluid"id="loginBar">		
 			<div "col-12" id="editPage">
 				<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary"  role="button" value="add movies">Add Movie</a>
 				<a href="/wwwproject/pages/addArtist.php" class="btn btn-primary"  role="button" value="Add Artist">Add Artist</a>

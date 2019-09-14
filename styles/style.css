@@ -1,6 +1,6 @@
 .container-fluid 
 {
-
+	border:1px solid white;
 }
 .grid-container 
 {
@@ -8,15 +8,16 @@
 }
 div
 {
-	border:1px solid white;
+	
 }
 .container
 {
-	
+	padding-left: none;
+	padding-right:none
 }
 .row
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 }
 .table
 {
@@ -54,26 +55,26 @@ div
 #formLogin
 {
 	text-align: center;
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 }
 #inputBox
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 	text-align: center;
 }
 #welcomeP
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 	text-align: center;
 }
 #registerP
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 	text-align: center;
 }
 #editPage
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 	text-align: center;
 }
 #btnMovies
@@ -108,6 +109,10 @@ div
 }
 #menuP
 {
-	background-color: #f5f9fa;
+	background-color: #FCF6F5FF;
 	text-align: center;
+}
+#headerBody
+{
+	background-color: #89ABE3FF;
 }
