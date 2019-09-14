@@ -14,8 +14,11 @@
 		<div class="container">
 			<div class="col-12">
 				<div class="row">
-					<p> <?php echo $row["email"];
-					echo "<br>"; ?></p>
+					<p> 
+						<?php
+							echo $row["email"]; str_repeat('&nbsp;', 5);
+						?>
+					</p>	
 				</div>
 			</div>
 		</div>

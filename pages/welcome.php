@@ -13,6 +13,7 @@
 			<section class="container">
 				<p>To manage your account press<br><a href="/wwwproject/pages/accountManagement.php" class="btn btn-primary" role="button" value="Edit profile">My Account</a></p>
 				<p>To see list of admins press<br><a href="../scripts/listAdmin.php" class="btn btn-primary">Admin List</a></p>
+				<a href="../pages/listArtist.php" class="btn btn-primary">delete artist List</a>
 			</section>
 		</body>
 	</div>

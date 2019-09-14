@@ -18,7 +18,6 @@
 				$credential=$row["credential"];
 			}
 		}
-		$conn->close();
    }
    if (isset($_POST['submit'])) 
    {
