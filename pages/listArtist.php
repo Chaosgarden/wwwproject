@@ -15,17 +15,12 @@
 			<div class="col-12">
 				<div class="row">
 					<p> 
-						<?php
-								$row["firstName"]; str_repeat('&nbsp;', 5);
-								$row["lastName"]; str_repeat('&nbsp;', 5);
-								
-						?>
-						<form action="../scripts/deleteArtist.php" method="post" >
-							<?php 
-							
-									echo $row["firstName"]; str_repeat('&nbsp;', 5);
-									echo $row["lastName"]; str_repeat('&nbsp;', 5);
-							?>			
+						<form action="../pages/pageArtist.php" method="post" >
+						
+							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
+							<input type="submit" name="submit" value="<?php echo $row["firstName"]." ".$row["lastName"]?>">
+						</form>
+						<form action="../scripts/deleteArtist.php" method="post" >	
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
 							<input type="submit" name="submit" value="Submit">
 						</form>

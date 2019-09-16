@@ -132,7 +132,7 @@ if ($result=$conn->query($sql))
 			</div>
 		</section>
 				
-	<?php		}	?>		
+<?php		}	?>		
 <?php include '../footer.php' ?>
 <?php	
 	}
@@ -144,4 +144,3 @@ if ($result=$conn->query($sql))
 			
 	$conn->close();
 ?>
-</html>
