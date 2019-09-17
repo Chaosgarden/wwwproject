@@ -40,28 +40,28 @@ else
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
-				<input type="text" name="firstName" placeholder="firstName" required>
+				First Name: <input type="text" name="firstName" placeholder="First Name" required>
 				<br>
 				<br>
-				<input type="text" name="lastName" placeholder="lastName" required>
+				Last Name: <input type="text" name="lastName" placeholder="Last Name" required>
 				<br>
 				<br>
-				<input type="text" name="nationality" placeholder="nationality" required>
+				Nationality: <input type="text" name="nationality" placeholder="Nationality" required>
 				<br>
 				<br>
-				<input type="date" name="yearOfBirth" placeholder="yearOfBirth" required>
+				Date of Birth: <input type="date" name="yearOfBirth" placeholder="yearOfBirth" required>
 				<br>
 				<br>
-				<input type="date" name="yearofDeath" placeholder="yearofDeath" required>
+				Date of Death: <input type="date" name="yearofDeath" placeholder="yearofDeath" required>
 				<br>
 				<br>
-				<input type="text" name="biography" placeholder="biography" required>
+				Biography: <input type="text" name="biography" placeholder="Biography" required>
 				<br>
 				<br>
-				<input type="url" name="picture" placeholder="picture" required>
+				Picture URL: <input type="url" name="picture" placeholder="Picture URL" required>
 				<br>
 				<br>
-				<input type="submit" name="submit" value="Submit">
+				<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 			</form>
         </div>
 	</div>

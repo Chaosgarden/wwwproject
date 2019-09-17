@@ -22,7 +22,7 @@
 						</form>
 						<form action="../scripts/deleteArtist.php" method="post" >	
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
-							<input type="submit" name="submit" value="Submit">
+							<input type="submit" class="btn btn-danger" name="submit" value="Delete">
 						</form>
 						
 

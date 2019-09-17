@@ -8,7 +8,7 @@
 <body id="headerBody">
 <?php    include_once('scripts/session.php'); ?>
 
-<header class="container-fluid">
+<header class="container-fluid" id="headerCFID">
 	<div class="row">
 		<div class="col-2" id="movieG">
 			<a href="/wwwproject/index.php" class="btn btn-primary" id="btnMovies" role="button">Movie Gallery </a>

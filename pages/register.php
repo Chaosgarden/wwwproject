@@ -72,19 +72,19 @@ if (isset($_POST['submit']))
 			<h2>Create your Account</h2>
 			<p>to continue</p>
 			<form action="register.php" method="post">
-				<input  type="text" name="firstName" pattern="[A-Za-z]{2.}$" placeholder="Firstname" required>
+				First Name: <input  type="text" name="firstName" pattern="[A-Za-z]{2.}$" placeholder="Firstname" required>
 				<br>
 				<br>
-				<input type="text" name="lastName" pattern="[A-Za-z]{2.}$" placeholder="Lastname" required>
+				Last Name: <input type="text" name="lastName" pattern="[A-Za-z]{2.}$" placeholder="Lastname" required>
 				<br>
 				<br>
-				<input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-Mail" required>
+				E-Mail: <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-Mail" required>
 				<br>
 				<br>
-				<input type="password" name="credential" pattern=".{8,}" placeholder="Password" required>
+				Password: <input type="password" name="credential" pattern=".{8,}$" placeholder="Password" title="Password must be 8 characters long" required>
 				<br>
 				<br>
-				<input type="submit" name="submit" value="Submit">
+				<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 			</form>
 		</div>
 	</div>

@@ -42,31 +42,31 @@ else
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
-				<input type="text" name="title" placeholder="Movie Title" required>
+				Movie Title: <input type="text" name="title" placeholder="Movie Title" required>
 				<br>
 				<br>
-				<input type="text" name="fullDescription" placeholder="Full description" required>
+				Full Description: <input type="text" name="fullDescription" placeholder="Full description" required>
 				<br>
 				<br>
-				<input type="text" name="shortDescription" placeholder="Short description" required>
+				Short Description: <input type="text" name="shortDescription" placeholder="Short description" required>
 				<br>
 				<br>
-				<input type="text" name="category" placeholder="Category" required>
+				Category: <input type="text" name="category" placeholder="Category" required>
 				<br>
 				<br>
-				<input type="number" name="movieLength" placeholder="Duration" required>
+				Movie length: <input type="number" name="movieLength" placeholder="Duration" required>
 				<br>
 				<br>
-				<input type="date" name="yearOfWork" placeholder="Date of release" required>
+				Date of release: <input type="date" name="yearOfWork" placeholder="Date of release" required>
 				<br>
 				<br>
-				<input type="url" name="image" placeholder="Image URL" required>
+				Picture URL: <input type="url" name="image" placeholder="Image URL" required>
 				<br>
 				<br>
-				<input type="url" name="link" placeholder="Trailer URL" required>
+				Trailer URL: <input type="url" name="link" placeholder="Trailer URL" required>
 				<br>
 				<br>
-				<input type="submit" name="submit" value="Submit">
+				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit">
 			</form>
         </div>
 	</div>

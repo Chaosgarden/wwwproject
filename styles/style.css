@@ -1,15 +1,3 @@
-.container-fluid 
-{
-	border:1px solid white;
-}
-.grid-container 
-{
-	
-}
-div
-{
-	
-}
 .container
 {
 	padding-left: none;
@@ -17,7 +5,7 @@ div
 }
 .row
 {
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 }
 .table
 {
@@ -55,26 +43,27 @@ div
 #formLogin
 {
 	text-align: center;
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 }
 #inputBox
 {
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 	text-align: center;
 }
 #welcomeP
 {
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 	text-align: center;
 }
 #registerP
 {
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 	text-align: center;
 }
 #editPage
 {
-	background-color: #FCF6F5FF;
+	border:1px solid white;
+	background-color: #F0EBF4;
 	text-align: center;
 }
 #btnMovies
@@ -109,10 +98,19 @@ div
 }
 #menuP
 {
-	background-color: #FCF6F5FF;
+	background-color: #F0EBF4;
 	text-align: center;
 }
 #headerBody
 {
-	background-color: #89ABE3FF;
+	background-color: #1F2833;
+}
+#headerCFID
+{
+	padding: 0;
+}
+#loginBar
+{
+	padding: 0;
+	
 }
