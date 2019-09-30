@@ -22,7 +22,12 @@
 						
 						<form action="../pages/editMovie.php" method="post" >
 							<input hidden type="text"  name="movieID" value="<?php echo $row["movieID"]?>"> 
-							<input type="submit" name="submit" value="<?php echo $row["movieID"]?>">
+							<input type="submit" name="submit" value="edit">
+						</form>
+						
+						<form action="../pages/associatedArtist.php" method="post" >	
+							<input hidden type="text"  name="movieID" value="<?php echo $row["movieID"]?>"> 
+							<input type="submit" name="submit" value="add artists">
 						</form>
 						
 						<form action="../scripts/deleteMovie.php" onsubmit="return confirm('Are you sure you want to delete?')" method="post" >	

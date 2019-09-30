@@ -23,7 +23,8 @@ include_once '../classes/artist.php';
 		}
 		if($searchType == "all")
 		{
-			$sql="SELECT * FROM artist a, movies m where (a.firstName LIKE '$searchText' OR a.lastname LIKE '$searchText' OR m.title LIKE '$searchText')";
+			$sql='SELECT * FROM artist a, movies m where ((a.firstName LIKE "%'.$searchText.'%" OR a.lastname LIKE "%'.$searchText.'%") OR m.title LIKE "%'.$searchText.'%")';
+			//$sql='SELECT * FROM artist where (firstName LIKE "%'.$searchText.'%" OR lastname LIKE "%'.$searchText.'%") UNION ALL SELECCT';
 			$result=$conn->query($sql);	
 		}
 	}
@@ -140,7 +141,8 @@ if ($result=$conn->query($sql))
 <?php
 		if($searchType == "all")
 		{
-			$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
+			if(isset($row["title"])){
+				$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
 		?>
 		<section class="container">
 			<div class="row">
@@ -178,10 +180,10 @@ if ($result=$conn->query($sql))
 				</div>
 			</div>
 		</section>
-	<?php		} ?>	
+		<?php		} } ?>	
 	<?php
 			if($searchType == "all")
-			{	
+			{	if(isset($row["firstName"])){
 				$Artists=new Artist($row["firstName"], $row["lastName"],$row["nationality"],$row["yearOfBirth"], $row["yearOfDeath"], $row["biography"],$row["picture"]);
 			?>
 			<section class="container">
@@ -233,7 +235,7 @@ if ($result=$conn->query($sql))
 			</div>
 		</section>
 				
-<?php		}	?>	
+			<?php		}}	?>	
 <?php include '../footer.php' ?>
 <?php	
 	}

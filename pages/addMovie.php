@@ -13,11 +13,15 @@ include_once '../config.php';
 		$link=$conn->real_escape_string($_POST['link']);
 		
 		$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
-			 values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$link')";
+				values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$link')";
+
+				$o="INSERT INTO orders (movieID) VALUES ( LAST_INSERT_ID() )";
 		
+
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
+			$conn->query($o);
 		}
 		else
 		{

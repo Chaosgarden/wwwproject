@@ -2,12 +2,10 @@
  include_once '../config.php';
  include_once('../scripts/session.php');
 
-
    if (isset($_POST['submit']))
-   {
-	     
+   {  
 	   	$movieID=$conn->real_escape_string($_POST['movieID']); 
-
+	
 		$sql="SELECT * FROM movies where movieID='$movieID'";
 		$result=$conn->query($sql);
 		if ($result->num_rows > 0) 
