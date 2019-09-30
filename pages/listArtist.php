@@ -25,7 +25,7 @@
 							<input type="submit" name="submit" value="edit">
 						</form>
 						
-						<form action="../scripts/deleteArtist.php" method="post" >	
+						<form action="../scripts/deleteArtist.php" onsubmit="return confirm('Are you sure you want to delete?')" method="post"; >	
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
 							<input type="submit" class="btn btn-danger" name="submit" value="Delete">
 						</form>

@@ -4,9 +4,9 @@
  
 	if (isset( $_SESSION['login_user']))
 	{
-		$artistID=$conn->real_escape_string( $_POST['artistID']);
+		$movieID=$conn->real_escape_string( $_POST['movieID']);
 		
-		$sql="DELETE FROM artist where artistID='$artistID' ";
+		$sql="DELETE FROM movies where movieID='$movieID' ";
 		$result=$conn->query($sql);
 		if ($result=$conn->query($sql) ) 
 		{

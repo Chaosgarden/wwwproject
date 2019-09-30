@@ -25,7 +25,7 @@
 							<input type="submit" name="submit" value="<?php echo $row["movieID"]?>">
 						</form>
 						
-						<form action="../scripts/deleteMovie.php" method="post" >	
+						<form action="../scripts/deleteMovie.php" onsubmit="return confirm('Are you sure you want to delete?')" method="post" >	
 							<input hidden type="text"  name="movieID" value="<?php echo $row["movieID"]?>"> 
 							<input type="submit" class="btn btn-danger" name="submit" value="Delete">
 						</form>

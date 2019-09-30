@@ -13,12 +13,12 @@ include_once '../classes/artist.php';
 		//$sql="SELECT * FROM artist where firstName='$searchText' OR lastName='$searchText ";
 		if($searchType == "movie")
 		{
-			$sql="SELECT * FROM movies where title LIKE '$searchText'";
+			$sql='SELECT * FROM movies where title LIKE "%'.$searchText.'%" ';
 			$result=$conn->query($sql);		
 		}
 		if($searchType == "artist")
 		{
-			$sql="SELECT * FROM artist where (firstName LIKE '$searchText' OR lastname LIKE '$searchText')";
+			$sql='SELECT * FROM artist where (firstName LIKE "%'.$searchText.'%" OR lastname LIKE "%'.$searchText.'%") ';
 			$result=$conn->query($sql);	
 		}
 		if($searchType == "all")

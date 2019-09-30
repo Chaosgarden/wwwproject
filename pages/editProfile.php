@@ -30,6 +30,8 @@
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
+			echo	"<script> alert('success, redirecting you to the main page') </script>";
+			header( "refresh:0; url=welcome.php" ); 
 		}
 		$conn->close();
    }
