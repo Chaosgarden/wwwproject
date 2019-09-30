@@ -16,10 +16,15 @@
 				<div class="row">
 					<p> 
 						<form action="../pages/pageArtist.php" method="post" >
-						
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
 							<input type="submit" name="submit" value="<?php echo $row["firstName"]." ".$row["lastName"]?>">
 						</form>
+						
+						<form action="../pages/editArtist.php" method="post" >
+							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
+							<input type="submit" name="submit" value="edit">
+						</form>
+						
 						<form action="../scripts/deleteArtist.php" method="post" >	
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
 							<input type="submit" class="btn btn-danger" name="submit" value="Delete">
