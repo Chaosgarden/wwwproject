@@ -8,38 +8,49 @@ include '../header.php';
 		$movieID=$conn->real_escape_string($_POST['movieID']); 
 		$artistID=$conn->real_escape_string($_POST['asocArtist']); 
 
-	//	$sql="SELECT * FROM orders where movieID='$movieID'";
-		$sql="INSERT INTO orders(movieID, artistID)
-			SELECT 'Joe The Student', id_teacher
-			FROM 
-			WHERE movieID = '10'";
-		echo $movieID;
-		echo $artistID;
-	
+		$sql="INSERT INTO roles (artistID, movieID) VALUES
+			( (SELECT artistID from artist WHERE artistID='$artistID'),	 (SELECT movieID from movies WHERE movieID='$movieID' ) );";
+		
+		if ($conn->query($sql))
+		{		
+			echo $resultMessage='<div class="alert alert-success">Success!</div>';		
+		}
 			while($row=$result->fetch_assoc()) 
-			{	echo "not working";
+			{
 				
-				echo $row["pee"];
+			
 			}
 		/*
-CREATE TABLE employee (
-    employee_id INTEGER PRIMARY KEY,
-    employee_name VARCHAR(100) NOT NULL
+CREATE TABLE artist (
+    artistID AUTOINCREMENT INTEGER PRIMARY KEY ,
+    firstName VARCHAR(30) NOT NULL,
+	lastName VARCHAR(30) NOT NULL,
+	nationality VARCHAR(30) NOT NULL,
+	yearOfBirth DATE NOT NULL,
+	yearOfDeath DATE NULL,
+	biography VARCHAR(30) NOT NULL,
+	picture VARCHAR(250) NULL
+	
 );
 
-CREATE TABLE company (
-    company_id INTEGER PRIMARY KEY,
-    company_name VARCHAR(300) NOT NULL
+CREATE TABLE movies (
+    movieID INTEGER(30),
+    movieImage VARCHAR(255) NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	fullDescription VARCHAR(255) NOT NULL,
+	shortDescription VARCHAR(255) NOT NULL,
+	yearofWork DATE NOT NULL,
+	category VARCHAR(255) NOT NULL,
+	movieLength VARCHAR(255) NOT NULL,
+	link VARCHAR(255) NULL
 );
 
-CREATE TABLE company_employee (
-    employee_id INTEGER NOT NULL,
-    company_id INTEGER NOT NULL,
-    work_hour_start TIME NOT NULL,
-    work_hour_end TIME NOT NULL,
-    FOREIGN KEY (employee_id) REFERENCES employee (employee_id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (company_id) REFERENCES company (company_id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    PRIMARY KEY (employee_id, company_id, work_hour_start, work_hour_end));
+CREATE TABLE roles (
+    artistID INTEGER NOT NULL,
+    movieID INTEGER NOT NULL,
+    FOREIGN KEY (artistID) REFERENCES employee (artistID) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (movieID) REFERENCES company (movieID) ON DELETE RESTRICT ON UPDATE CASCADE,
+    PRIMARY KEY (artistID, movieID);
 	
 */	
 	}

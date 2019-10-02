@@ -1,6 +1,7 @@
 <?php
 	include ('../header.php');
 	include_once('../scripts/session.php');
+
 ?>
 <html>
 	<div class="container" id="menuP">

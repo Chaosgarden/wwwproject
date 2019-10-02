@@ -4,6 +4,7 @@ include_once '/classes/movie.php';
 //mysql query
 
 $sql="SELECT * FROM movies";
+ 
 $result=$conn->query($sql);
 
 if ($result->num_rows > 0) 
