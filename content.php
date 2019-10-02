@@ -3,21 +3,22 @@ include_once '/classes/movie.php';
 
 //mysql query
 
-$sql="SELECT * FROM movies";
- 
-$result=$conn->query($sql);
-
-if ($result->num_rows > 0) 
-{
-	// data of each row
-	while($row=$result->fetch_assoc()) 
+$sql="SELECT * FROM movies LEFT JOIN roles on movies.movieID = roles.movieID";
+	$result=$conn->query($sql);
+	$counter= 1;
+	if ($result->num_rows > 0) 
 	{
 		
-		?>
+		while($row=$result->fetch_assoc()) 
+		{	
+			
+			$sqli="SELECT firstName,lastName FROM artist WHERE artistID ='".$row['artistID']."' ";
+			$results=$conn->query($sqli);
+			
+				?>
 		<section class="container">
 			<div class="row">
 	
-				<!--flexbox is prob a better way, whitespace placeholder(prob not the best way-->		
 			<?php
 				$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
 			?>		
@@ -44,6 +45,14 @@ if ($result->num_rows > 0)
 											<p> <?php echo $Movies->getShortDescript(); ?> </p>
 										</td>
 									</tr>
+									<?php while($rows=$results->fetch_assoc()){
+										?>
+										<tr>
+											<td>
+												<a href="<?php echo $rows["firstName"]; ?>" class="btn btn-info" role="button"><?php echo $rows["firstName"]; ?> </a>
+											</td>
+										</tr>
+									<?php	} ?>
 									<tr>
 										<td>
 											<a href="<?php echo $Movies->getLink(); ?>" class="btn btn-info" role="button">Movie Trailer </a>
@@ -54,7 +63,6 @@ if ($result->num_rows > 0)
 						</div>
 					</div>
 				</div>
-				<!--whitespace placeholder(prob not the best way-->
 			</div>
 		</section>
 <?php	
