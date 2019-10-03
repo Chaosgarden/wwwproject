@@ -3,16 +3,18 @@ include_once '/classes/movie.php';
 
 //mysql query
 
-$sql="SELECT * FROM movies LEFT JOIN roles on movies.movieID = roles.movieID";
+$sql="SELECT * FROM movies" ;//LEFT JOIN roles on movies.movieID = roles.movieID";
 	$result=$conn->query($sql);
-	$counter= 1;
+	
 	if ($result->num_rows > 0) 
 	{
 		
 		while($row=$result->fetch_assoc()) 
 		{	
+			$movieID = $row["movieID"];
+			$sqli="SELECT artist.artistID,artist.firstName FROM roles LEFT JOIN artist ON roles.artistID = artist.artistID 
+					WHERE roles.movieID = (SELECT movieID FROM movies WHERE movieID ='$movieID')";
 			
-			$sqli="SELECT firstName,lastName FROM artist WHERE artistID ='".$row['artistID']."' ";
 			$results=$conn->query($sqli);
 			
 				?>
@@ -44,15 +46,15 @@ $sql="SELECT * FROM movies LEFT JOIN roles on movies.movieID = roles.movieID";
 										<td>
 											<p> <?php echo $Movies->getShortDescript(); ?> </p>
 										</td>
-									</tr>
+									</tr>						
+									<tr>
 									<?php while($rows=$results->fetch_assoc()){
-										?>
-										<tr>
-											<td>
-												<a href="<?php echo $rows["firstName"]; ?>" class="btn btn-info" role="button"><?php echo $rows["firstName"]; ?> </a>
-											</td>
-										</tr>
+									?>
+										<td>
+											<a href="<?php echo $rows["firstName"]; ?>" class="btn btn-info" role="button"><?php echo $rows["firstName"]; ?> </a>
+										</td>
 									<?php	} ?>
+									</tr>
 									<tr>
 										<td>
 											<a href="<?php echo $Movies->getLink(); ?>" class="btn btn-info" role="button">Movie Trailer </a>

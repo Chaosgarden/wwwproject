@@ -21,7 +21,7 @@ class Artist
 		$this->picture=$picture;
 	}
 	function getFirstName()
-	{
+	{	
 		return  $this->firstName;
 	}
 	function getLastName()

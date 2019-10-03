@@ -69,19 +69,19 @@ CREATE TABLE roles (
 		<div class="col-12" id="registerP">
 					
 								
-									<form action="associatedArtist.php" method="post">
-										<input hidden type="text"  name="movieID" value="<?php if(isset($movieID)){echo $movieID;}?>"> 
-										<select name="asocArtist">
-										<?php 	while($row=$result->fetch_assoc()) 
-											{		?>							
-											 <option value="<?php echo $row['artistID'] ;?>"><?php echo $row['firstName'] ;?> </option>	
-										<?php	} ?>
-										</select>
-									
-										<input type="submit" class="btn btn-primary" name="artistAssoc" value="Submit">
-								</form> <?php								
-								 
-							}
+		<form action="associatedArtist.php" method="post">
+			<input hidden type="text"  name="movieID" value="<?php if(isset($movieID)){echo $movieID;}?>"> 
+			<select name="asocArtist">
+			<?php 	while($row=$result->fetch_assoc()) 
+				{		?>							
+				<option value="<?php echo $row['artistID'] ;?>"> <?php echo $row['firstName'] ;?> </option>	
+			<?php	} ?>
+			</select>
+		
+			<input type="submit" class="btn btn-primary" name="artistAssoc" value="Submit">
+		</form> <?php								
+	 
+}
 						
 						
 					
