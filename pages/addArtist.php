@@ -12,8 +12,16 @@ include_once '../config.php';
 		$biography=$conn->real_escape_string($_POST['biography']);
 		$picture=$conn->real_escape_string($_POST['picture']);
 			
-		$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearofDeath, biography, picture)
-			 values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
+		if($yearofDeath    == "")
+        {
+                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$picture')";
+        }
+        else
+		{
+            $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
+        }
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
@@ -52,16 +60,16 @@ else
 				Date of Birth: <input type="date" name="yearOfBirth" placeholder="yearOfBirth" required>
 				<br>
 				<br>
-				Date of Death: <input type="date" name="yearofDeath" placeholder="yearofDeath" required>
+				Date of Death: <input type="date" name="yearofDeath" placeholder="yearofDeath">
 				<br>
 				<br>
 				Biography: <input type="text" name="biography" placeholder="Biography" required>
 				<br>
 				<br>
-				Picture URL: <input type="url" name="picture" placeholder="Picture URL" required>
+				Picture URL: <input type="url" name="picture" placeholder="Picture URL">
 				<br>
 				<br>
-				<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+				<input type="submit" class="btn btn-primary" name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 			</form>
         </div>
 	</div>

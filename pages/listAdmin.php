@@ -6,12 +6,13 @@
 	if (isset( $_SESSION['login_user']))
 	{  
 		$sql="SELECT * FROM admins";
-		$result=$conn->query($sql);
-		
+		$result=$conn->query($sql);?>
+		<div class="container">
+		<?php
 		while($row=$result->fetch_assoc()) 
 		{
 		?>
-		<div class="container">
+		
 			<div class="col-12">
 				<div class="row">
 					<p> 
@@ -21,9 +22,12 @@
 					</p>	
 				</div>
 			</div>
-		</div>
+			
+			
 			<?php
 		}
 	}
 	$conn->close();
 ?>
+	<a href="/wwwproject/pages/welcome.php" id="backBTN" class="btn btn-primary" role="button" value="homePage">Back</a>
+		</div>

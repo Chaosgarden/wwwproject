@@ -79,7 +79,9 @@ CREATE TABLE roles (
 			</select>
 		
 			<input type="submit" class="btn btn-primary" name="artistAssoc" value="Submit">
-		</form> <?php								
+		</form> 
+		<p><a href="/wwwproject/pages/listMovies.php" class="btn btn-primary" role="button" value="homePage">Cancel</a></p>
+		<?php								
 	 
 }
 						

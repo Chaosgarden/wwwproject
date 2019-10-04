@@ -29,8 +29,6 @@
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
 							<input type="submit" class="btn btn-danger" name="submit" value="Delete">
 						</form>
-						
-
 					</p>
 				</div>
 			</div>
@@ -40,3 +38,4 @@
 	}
 	$conn->close();
 ?>
+<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>

@@ -57,7 +57,7 @@
 			<input type="password" name="credential" placeholder="Password" value="<?php if(isset($credential)){echo $credential;} ?>">
 			<br>
 			<br>
-			<input type="submit" name="submit" value="Submit">
+			<input type="submit" name="submit" class="btn btn-primary" value="Submit"> <a href="/wwwproject/pages/accountManagement.php" class="btn btn-primary" role="button" value="homePage">Cancel</a>
 		</form>
 		</div>
 	</div>

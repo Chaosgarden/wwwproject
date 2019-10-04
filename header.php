@@ -11,7 +11,7 @@
 <header class="container-fluid" id="headerCFID">
 	<div class="row">
 		<div class="col-2" id="movieG">
-			<a href="/wwwproject/index.php" class="btn btn-primary" id="btnMovies" role="button">Movie Gallery </a>
+			<a href="/wwwproject/index.php" class="btn btn-primary" id="btnMovies" role="button">Home Page</a>
 		</div>
 		
 		<div class="col-8" id ="options">
@@ -34,7 +34,7 @@
 				</div>
 		<?php }else{ ?> 
 				<div class="col-2" id="signUpIn">
-					<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" id="btnHome" role="button" value="homePage">Home Page</a>
+					<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" id="btnHome" role="button" value="homePage">My Account</a>
 					<br>
 					<a href="/wwwproject/scripts/logout.php" class="btn btn-primary"  id="btnOut" role="button" value="Sign out">Sign out</a>		
 					

@@ -24,32 +24,32 @@ if (isset($_POST['submit']))
 						<table class="table borderless">
 							<tr>
 								<th>
-								<p> <?php echo $Artists->getFirstName(); ?> </p>
+									First Name:<p> <?php echo $Artists->getFirstName(); ?> </p>
 								</th>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Artists->getLastName(); ?></p>
+									Last Name:<p> <?php echo $Artists->getLastName(); ?></p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Artists->getNationality(); ?> </p>
+									Nationality:<p> <?php echo $Artists->getNationality(); ?> </p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Artists->getYearOfBirth(); ?> </p>
+									Date of Birth:<p> <?php echo $Artists->getYearOfBirth(); ?> </p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Artists->getYearOfDeath(); ?> </p>
+									Date of Death:<p> <?php echo $Artists->getYearOfDeath(); ?> </p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Artists->getBiography(); ?> </p>
+									Biography:<p> <?php echo $Artists->getBiography(); ?> </p>
 								</td>
 							</tr>
 						</table>

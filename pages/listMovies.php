@@ -45,3 +45,4 @@
 	}
 	$conn->close();
 ?>
+<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>

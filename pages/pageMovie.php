@@ -33,17 +33,17 @@ if (isset($_POST['submit']))
 						<table class="table borderless">
 							<tr>
 								<th>
-								<p> <?php echo $Movies->getTitle(); ?> </p>
+									Title:<p> <?php echo $Movies->getTitle(); ?> </p>
 								</th>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Movies->getMovieLength(); ?>min - <?php echo $Movies->getCategory(); ?> </p>
+									Duration:<p> <?php echo $Movies->getMovieLength(); ?>min - <?php echo $Movies->getCategory(); ?> </p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> <?php echo $Movies->getShortDescript(); ?> </p>
+									Description<p> <?php echo $Movies->getShortDescript(); ?> </p>
 								</td>
 							</tr>
 							<tr>

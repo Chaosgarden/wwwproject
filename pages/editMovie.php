@@ -93,7 +93,7 @@
 				<br>
 				<br>
 				<input hidden type="text"  name="movieID" value="<?php if(isset($movieID)){echo $movieID;}?>"> 
-				<input type="submit" class="btn btn-primary" 	name="edit" value="Submit">
+				<input type="submit" class="btn btn-primary" 	name="edit" value="Submit"> <a href="/wwwproject/pages/listMovies.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 			</form>
         </div>
 	</div>

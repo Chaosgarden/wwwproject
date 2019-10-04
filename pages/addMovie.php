@@ -14,14 +14,11 @@ include_once '../config.php';
 		
 		$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
 				values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$link')";
-
-				$o="INSERT INTO orders (movieID) VALUES ( LAST_INSERT_ID() )";
 		
 
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
-			$conn->query($o);
 		}
 		else
 		{
@@ -70,7 +67,7 @@ else
 				Trailer URL: <input type="url" name="link" placeholder="Trailer URL" required>
 				<br>
 				<br>
-				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit">
+				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 			</form>
         </div>
 	</div>
