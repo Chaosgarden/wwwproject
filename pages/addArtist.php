@@ -12,7 +12,7 @@ include_once '../config.php';
 		$biography=$conn->real_escape_string($_POST['biography']);
 		$picture=$conn->real_escape_string($_POST['picture']);
 			
-		if($yearofDeath    == "")
+		if($yearofDeath == "")
         {
                 $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
                 values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$picture')";
