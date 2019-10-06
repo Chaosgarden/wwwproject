@@ -51,13 +51,13 @@
 		<h2>Sign in</h2>
 		<p>to continue</p>
 		<form action="../pages/login.php" method="post" >
-			<input type="text" name="email" placeholder="E-Mail" required>
+			E-Mail:<input type="text" name="email" placeholder="E-Mail" required>
 			<br>
 			<br>
-			<input type="password" name="credential" placeholder="Password" required>
+			Password:<input type="password" name="credential" placeholder="Password" required>
 			<br>
 			<br>
-			<input type="submit" name="submit" value="Submit">
+			<input type="submit" class="btn btn-primary" name="submit" value="Submit">
 		</form>
 		</div>
 	</div>
