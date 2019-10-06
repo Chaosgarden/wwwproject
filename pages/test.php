@@ -1,74 +1,38 @@
 <?php
-	include ('../header.php');
-	include_once '../classes/movie.php';
-	include_once('../scripts/session.php');
-	include_once('../config.php');
-	$sql="SELECT * FROM movies LEFT JOIN roles on movies.movieID = roles.movieID";
-	$result=$conn->query($sql);
-	$counter= 1;
-	if ($result->num_rows > 0) 
-	{
-		
-		while($row=$result->fetch_assoc()) 
-		{	
-		
-			$sqli="SELECT firstName,lastName FROM artist WHERE artistID ='".$row['artistID']."' ";
-			$results=$conn->query($sqli);
-			
-				?>
-		<section class="container">
-			<div class="row">
+
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+	$target_dir = "uploads/";
+	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	
-			<?php
-				$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);
-			?>		
-				<div class="col-12">
-					<div class="row">
-						<div class="col-4">
-							<img id="contentImg" src="<?php echo $Movies->getImage(); ?>">  </img>
-						</div>
-						<div class="col-8">
-							<div class="table-responsive">
-								<table class="table borderless">
-									<tr>
-										<th>
-										<p> <?php echo $Movies->getTitle(); ?> </p>
-										</th>
-									</tr>
-									<tr>
-										<td>
-											<p> <?php echo $Movies->getMovieLength(); ?>min - <?php echo $Movies->getCategory(); ?> </p>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p> <?php echo $Movies->getShortDescript(); ?> </p>
-										</td>
-									</tr>
-									<?php while($rows=$results->fetch_assoc()){
-										?>
-										<tr>
-											<td>
-												<a href="<?php echo $rows["firstName"]; ?>" class="btn btn-info" role="button"><?php echo $rows["firstName"]; ?> </a>
-											</td>
-										</tr>
-									<?php	} ?>
-									<tr>
-										<td>
-											<a href="<?php echo $Movies->getLink(); ?>" class="btn btn-info" role="button">Movie Trailer </a>
-										</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-<?php				
-	
-			 
-		}
-	}
-	
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+	if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+
+}
+// Check if file already exists
+
 ?>
+		<form action="test.php" method="post" enctype= "multipart/form-data">	
+			<form>
+				Or upload an image: <input type="file" name="fileToUpload" id="fileToUpload">
+		
+				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+			</form>
