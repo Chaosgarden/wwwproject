@@ -4,6 +4,21 @@ include_once '../config.php';
 
 	if (isset($_POST['submit'])) 
 	{
+		$target_dir = "../imageUploads//";
+	$target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	
+    $check = getimagesize($_FILES["imageUpload"]["tmp_name"]);
+    if($check !== false) 
+	{
+        $uploadOk = 1;
+    }
+
+    if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file))
+	{
+        $filePathArtists = "/wwwproject/imageUploads/" .basename( $_FILES["imageUpload"]["name"]);
+    } 
 		$firstName=$conn->real_escape_string($_POST['firstName']);
 		$lastName=$conn->real_escape_string($_POST['lastName']);
 		$nationality=$conn->real_escape_string($_POST['nationality']);
@@ -12,6 +27,16 @@ include_once '../config.php';
 		$biography=$conn->real_escape_string($_POST['biography']);
 		$picture=$conn->real_escape_string($_POST['picture']);
 			
+		if($picture == "")
+		{
+			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$filePathArtists')";
+		}
+		else
+		{
+			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
+		}
 		if($yearofDeath == "")
         {
                 $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
@@ -44,7 +69,7 @@ else
 	
 	<div class="container">
 		<div class="col-12" id="registerP">
-			<form action="addArtist.php" method="post">	
+			<form action="addArtist.php" method="post" enctype= "multipart/form-data">	
 				<h2>Hello admin,</h2>
 				<p>please enter all the required information to continue</p>
 				<br>
@@ -67,6 +92,9 @@ else
 				<br>
 				<br>
 				Picture URL: <input type="url" name="picture" placeholder="Picture URL">
+				<br>
+				<br>
+				Or upload an image: <input type="file" name="imageUpload" id="imageUpload">
 				<br>
 				<br>
 				<input type="submit" class="btn btn-primary" name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>

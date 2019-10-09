@@ -10,14 +10,15 @@ include_once '../config.php';
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
+    if($check !== false) 
+	{
         $uploadOk = 1;
     }
 
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
+	{
         $filePath = "/wwwproject/uploads/" .basename( $_FILES["fileToUpload"]["name"]);
     } 
-
 
 		$title= $conn->real_escape_string($_POST['title']);
 		$movieImage=$conn->real_escape_string($_POST['image']);
