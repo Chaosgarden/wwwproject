@@ -27,26 +27,27 @@ include_once '../config.php';
 		$biography=$conn->real_escape_string($_POST['biography']);
 		$picture=$conn->real_escape_string($_POST['picture']);
 			
-		if($picture == "")
+		if($picture == "" && $yearofDeath == "")
 		{
 			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$filePathArtists')";
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$filePathArtists')";
 		}
+		else if($yearofDeath == "" && $picture != "")
+        {
+                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
+        }
+		else if($yearofDeath != "" && $picture == "")
+        {
+                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$filePathArtists')";
+        }
 		else
 		{
 			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', , '$biography', '$picture')";
 		}
-		if($yearofDeath == "")
-        {
-                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$picture')";
-        }
-        else
-		{
-            $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
-        }
+		
 		if ($conn->query($sql))
 		{		
 			echo $resultMessage='<div class="alert alert-success">Success!</div>';	
