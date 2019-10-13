@@ -7,7 +7,7 @@
 	{  
 		$sql="SELECT * FROM admins";
 		$result=$conn->query($sql);?>
-		<div class="container">
+	<div class="container">
 		<?php
 		while($row=$result->fetch_assoc()) 
 		{
@@ -29,5 +29,7 @@
 	}
 	$conn->close();
 ?>
-	<a href="/wwwproject/pages/welcome.php" id="backBTN" class="btn btn-primary" role="button" value="homePage">Back</a>
+		<div class="row justify-content-center">
+			<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 		</div>
+	</div>

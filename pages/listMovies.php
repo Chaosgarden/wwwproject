@@ -8,11 +8,15 @@
 		$sql="SELECT * FROM movies";
 		$result=$conn->query($sql);
 		
-		while($row=$result->fetch_assoc()) 
-		{
 		?>
 		<div class="container">
 			<div class="col-12">
+		<?php
+		while($row=$result->fetch_assoc()) 
+		{
+		?>
+		
+			
 				<div class="row">
 					<p> 
 						<form action="../pages/pageMovie.php" method="post" >
@@ -37,12 +41,14 @@
 						
 
 					</p>
-				</div>
-			</div>
-		</div>
+				</div>	
 			<?php
 		}
 	}
 	$conn->close();
 ?>
+<div class="row justify-content-center">
 <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+</div>
+</div>
+</div>
