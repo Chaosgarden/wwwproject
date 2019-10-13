@@ -14,10 +14,10 @@
 		?>
 		
 			<div class="col-12">
-				<div class="row">
+				<div class="row justify-content-center">
 					<p> 
 						<?php
-							echo $row["email"]; str_repeat('&nbsp;', 5);
+							echo "emails : ".$row["email"]; str_repeat('&nbsp;', 5);
 						?>
 					</p>	
 				</div>

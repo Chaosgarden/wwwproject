@@ -1,16 +1,24 @@
 <?php
+include('../header.php');
 include_once('../scripts/session.php');
 include_once '../config.php';
 include_once '../classes/artist.php';
 
+
 if (isset($_POST['submit'])) 
 	{	
+	
 		$artistID=$conn->real_escape_string($_POST['artistID']);
 		$sql="SELECT * FROM artist where artistID='$artistID'";
-		$result=$conn->query($sql);	
+		
+		$sqli="SELECT movies.movieID,movies.title FROM roles LEFT JOIN movies ON roles.movieID = movies.movieID 
+					WHERE roles.artistID = (SELECT artistID FROM artist WHERE artistID ='$artistID')";							
+		$result=$conn->query($sql);
+		$results=$conn->query($sqli);	
 		while($row=$result->fetch_assoc()) 
 		{
 		$Artists=new Artist($row["firstName"], $row["lastName"],$row["nationality"],$row["yearOfBirth"], $row["yearOfDeath"], $row["biography"],$row["picture"]);
+		
 ?>
 <section class="container">
 	<div class="row">
@@ -51,6 +59,19 @@ if (isset($_POST['submit']))
 								<td>
 									Biography:<p> <?php echo $Artists->getBiography(); ?> </p>
 								</td>
+							</tr>
+							<tr>
+							<td>
+							<span> Movies </span>
+							<?php while($rows=$results->fetch_assoc()){ ?>
+							
+								<form action="pageMovie.php" method="post">
+									<input hidden type="text"  name="movieID" value="<?php if(isset($rows["movieID"])){ echo $rows["movieID"];}?>"> 
+									<input type="submit" class="btn btn-primary" name="submit" value="<?php echo $rows["title"]; ?>">
+								</form>
+							
+							<?php } ?>
+							</td>
 							</tr>
 						</table>
 					</div>

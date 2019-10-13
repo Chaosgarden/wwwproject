@@ -14,14 +14,13 @@
 		<?php
 		while($row=$result->fetch_assoc()) 
 		{
-		?>
-		
-			
-				<div class="row">
+		?>	
+				<div class="row justify-content-center">
 					<p> 
 						<form action="../pages/pageMovie.php" method="post" >
 							<input hidden type="text"  name="movieID" value="<?php echo $row["movieID"]?>"> 
-							<input type="submit" name="submit" value="<?php echo $row["title"] ?>">
+							<span> <?php echo "Name: " . $row["title"]?> </span>
+							<input type="submit" name="submit" value="<?php echo "profile"; ?>">
 						</form>
 						
 						<form action="../pages/editMovie.php" method="post" >

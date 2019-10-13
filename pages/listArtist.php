@@ -20,7 +20,8 @@
 					<p> 
 						<form action="../pages/pageArtist.php" method="post" >
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
-							<input type="submit" name="submit" value="<?php echo $row["firstName"]." ".$row["lastName"]?>">
+							<span> <?php echo "Name of Artist: " . $row["firstName"]." ".$row["lastName"]?> </span>
+							<input type="submit" name="submit" value="<?php echo "profile"; ?>">
 						</form>
 						
 						<form action="../pages/editArtist.php" method="post" >

@@ -17,9 +17,6 @@ if (isset($_POST['submit']))
 		while($row=$result->fetch_assoc()) 
 		{
 			$Movies=new Movie($row["title"], $row["movieImage"],$row["fullDescription"],$row["shortDescription"], $row["category"], $row["yearOfWork"],$row["movieLength"], $row["link"]);		
-			
-			
-		
 ?>
 <section class="container">
 	<div class="row">
@@ -47,17 +44,22 @@ if (isset($_POST['submit']))
 								</td>
 							</tr>
 							<tr>
+							<td>
+							<span> Artists: </span>
 							<?php while($rows=$results->fetch_assoc()){	 
 									$artistName= $rows["firstName"];
 									$artistID= $rows["artistID"];
 							?>
-								<td>
-									 <form action="artistPage.php" method="post">
+								
+									 <form action="pageArtist.php" method="post">
+										
 										<input hidden type="text"  name="artistID" value="<?php if(isset($artistID)){echo $artistID;}?>"> 
 										<input type="submit" class="btn btn-primary" name="submit" value="<?php if(isset($artistName)){echo $artistName;}?>">
 									</form>	 
-								</td>
+								
 							<?php } ?>
+							</td>
+							</td>
 							</tr>			
 							<tr>
 								<td>

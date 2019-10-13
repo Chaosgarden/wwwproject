@@ -51,7 +51,11 @@ $sql="SELECT * FROM movies" ;//LEFT JOIN roles on movies.movieID = roles.movieID
 									<?php while($rows=$results->fetch_assoc()){
 									?>
 										<td>
-											<a href="<?php echo $rows["firstName"]; ?>" class="btn btn-info" role="button"><?php echo $rows["firstName"]; ?> </a>
+											<form action="pages/pageArtist.php" method="post">
+												<input hidden type="text"  name="artistID" value="<?php if(isset($rows["artistID"])){ echo $rows["artistID"];}?>"> 
+												<input type="submit" class="btn btn-primary" name="submit" value="<?php echo $rows["firstName"]; ?>">
+											</form>
+
 										</td>
 									<?php	} ?>
 									</tr>
