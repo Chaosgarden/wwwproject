@@ -7,13 +7,16 @@
 	{  
 		$sql="SELECT * FROM artist";
 		$result=$conn->query($sql);
-		
+		?>
+				<div class="container">
+					<div class="col-12">
+				<?php
 		while($row=$result->fetch_assoc()) 
 		{
 		?>
-		<div class="container">
-			<div class="col-12">
-				<div class="row">
+		
+			
+				<div class="row justify-content-center">
 					<p> 
 						<form action="../pages/pageArtist.php" method="post" >
 							<input hidden type="text"  name="artistID" value="<?php echo $row["artistID"]?>"> 
@@ -31,11 +34,15 @@
 						</form>
 					</p>
 				</div>
-			</div>
-		</div>
+			
+		
 			<?php
 		}
 	}
 	$conn->close();
 ?>
-<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+		<div class="row justify-content-center">
+		<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" id="btnReturn" value="homePage">Back</a>
+		</div>
+</div>
+</div>
