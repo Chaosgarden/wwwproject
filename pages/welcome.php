@@ -11,9 +11,10 @@
 			<h1>Welcome <?php echo $login_session; ?> </h1> 
 			<br>
 			<section class="container">
-				<p>To see list of admins press<br><a href="../pages/listAdmin.php" class="btn btn-primary">Admin List</a></p>
-				<p>To see list of artists press<br><a href="../pages/listArtist.php" class="btn btn-primary">Artist List</a></p>
-				<p>To see list of movies press<br><a href="../pages/listMovies.php" class="btn btn-primary">Movie List</a></p>
+				<p>To view the list of administrators, press:</p>
+				<a href="/wwwproject/pages/listAdmin.php" class="btn btn-primary"  role="button" value="Add Artist">Admin List</a>
+				<br>
+				<br>
 				<p>To manage your account press<br><a href="/wwwproject/pages/accountManagement.php" class="btn btn-primary" role="button" value="Edit profile">My Account</a></p>
 			</section>
 		</body>

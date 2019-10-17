@@ -5,7 +5,6 @@
 
    if (isset($_POST['submit']))
    {
-	   
 		$artistID=$conn->real_escape_string($_POST['artistID']);
 		$sql="SELECT * FROM artist where artistID='$artistID'";
 		$result=$conn->query($sql);
@@ -22,7 +21,6 @@
 				$picture=$row["picture"];
 			}
 		}
-	
    }
    if (isset($_POST['edit'])) 
    {

@@ -4,7 +4,7 @@ include_once '../config.php';
 
 	if (isset($_POST['submit'])) 
 	{
-		$target_dir = "../imageUploads//";
+	$target_dir = "../imageUploads//";
 	$target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

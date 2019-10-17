@@ -45,8 +45,8 @@
 	{ ?>	
 		<div class="container-fluid"id="loginBar">		
 			<div "col-12" id="editPage">
-				<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary"  role="button" value="add movies">Add Movie</a>
-				<a href="/wwwproject/pages/addArtist.php" class="btn btn-primary"  role="button" value="Add Artist">Add Artist</a>
+				<a href="/wwwproject/pages/movieManagement.php" class="btn btn-primary"  role="button" value="add movies">Movie Management</a>
+				<a href="/wwwproject/pages/artistManagement.php" class="btn btn-primary"  role="button" value="Add Artist">Artist Management</a>
 			</div>
 		</div>
 	<?php } ?> 
