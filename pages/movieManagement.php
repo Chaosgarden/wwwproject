@@ -16,7 +16,7 @@
 				<a href="/wwwproject/pages/addMovie.php" class="btn btn-primary"  role="button" value="add movies">Add Movie</a>
 				<br>
 				<p>To view the list of movies, press:</p>
-				<a href="/wwwproject/pages/listMovies.php" class="btn btn-primary"  role="button" value="add movies">Add Movie</a>
+				<a href="/wwwproject/pages/listMovies.php" class="btn btn-primary"  role="button" value="add movies">Movie List</a>
 				<br>
 				<br>
 				<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
