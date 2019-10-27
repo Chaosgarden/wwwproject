@@ -98,7 +98,7 @@ else
 				Or upload an image: <input type="file" name="imageUpload" id="imageUpload">
 				<br>
 				<br>
-				<input type="submit" class="btn btn-primary" name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+				<input type="submit" class="btn btn-primary" name="submit" value="Submit"> <a href="/wwwproject/pages/artistManagement.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 			</form>
         </div>
 	</div>

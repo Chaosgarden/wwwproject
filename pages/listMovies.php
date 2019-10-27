@@ -47,7 +47,7 @@
 	$conn->close();
 ?>
 <div class="row justify-content-center">
-<a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+<a href="/wwwproject/pages/movieManagement.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 </div>
 </div>
 </div>

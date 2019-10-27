@@ -90,7 +90,7 @@ include_once '../config.php';
 				Trailer URL: <input type="url" name="links" placeholder="Trailer URL" required>
 				<br>
 				<br>
-				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit"> <a href="/wwwproject/pages/welcome.php" class="btn btn-primary" role="button" value="homePage">Back</a>
+				<input type="submit" class="btn btn-primary" 	name="submit" value="Submit"> <a href="/wwwproject/pages/movieManagement.php" class="btn btn-primary" role="button" value="homePage">Back</a>
 			</form>
         </div>
 	</div>

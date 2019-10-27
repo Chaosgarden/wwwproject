@@ -73,6 +73,11 @@ if (isset($_POST['submit']))
 							<?php } ?>
 							</td>
 							</tr>
+							<tr>
+							<td>
+								<a href="/wwwproject/pages/listArtist.php" class="btn btn-primary" role="button" id="btnReturn" value="homePage">Back</a>
+							</td>
+							</tr>
 						</table>
 					</div>
 				</div>

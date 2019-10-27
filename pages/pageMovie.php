@@ -66,6 +66,11 @@ if (isset($_POST['submit']))
 									<a href="<?php echo $Movies->getLink(); ?>" class="btn btn-info" role="button">Movie Trailer </a>
 								</td>
 							</tr>
+							<tr>
+							<td>
+								<a href="/wwwproject/pages/listMovies.php" class="btn btn-primary" role="button" id="btnReturn" value="homePage">Back</a>
+							</td>
+							</tr>
 						</table>
 					</div>
 				</div>

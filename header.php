@@ -47,6 +47,7 @@
 			<div "col-12" id="editPage">
 				<a href="/wwwproject/pages/movieManagement.php" class="btn btn-primary"  role="button" value="add movies">Movie Management</a>
 				<a href="/wwwproject/pages/artistManagement.php" class="btn btn-primary"  role="button" value="Add Artist">Artist Management</a>
+				<a href="/wwwproject/pages/listAdmin.php" class="btn btn-primary"  role="button" value="Add Artist">Admin List</a>
 			</div>
 		</div>
 	<?php } ?> 
