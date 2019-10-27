@@ -4,22 +4,6 @@ include_once '../config.php';
 
 	if (isset($_POST['submit'])) 
 	{
-	$target_dir = "../uploads/";
-	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) 
-	{
-        $uploadOk = 1;
-    }
-
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
-	{
-        $filePath = "/wwwproject/uploads/" .basename( $_FILES["fileToUpload"]["name"]);
-    } 
-
 		$title= $conn->real_escape_string($_POST['title']);
 		$movieImage=$conn->real_escape_string($_POST['image']);
 		$fullDescription=$conn->real_escape_string($_POST['fullDescription']);
@@ -28,15 +12,32 @@ include_once '../config.php';
 		$yearOfWork=$conn->real_escape_string($_POST['yearOfWork']);
 		$movieLength=$conn->real_escape_string($_POST['movieLength']);
 		$links=$conn->real_escape_string($_POST['links']);
+		$upload = false;
 		
-		if($movieImage == "")
+		if(basename($_FILES["fileToUpload"]["name"]) != null)
 		{
+			$upload = true;
+		}
+		if($movieImage == "" && $upload == true)
+		{
+			$target_dir = "../uploads/";
+			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+			if($check !== false) 
+			{
+				$uploadOk = 1;
+			}
+			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
+			{
+				$filePath = "/wwwproject/uploads/" .basename( $_FILES["fileToUpload"]["name"]);
+			} 
 			$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
 				values ('$title', '$filePath', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$links')";
 		}
 		else 
 		{
-			echo "<script> alert('works2'); </script>";
 			$sql="INSERT INTO movies (title, movieImage, fullDescription, shortDescription, category, yearOfWork, movieLength, link)
 				values ('$title', '$movieImage', '$fullDescription', '$shortDescription', '$category', '$yearOfWork', '$movieLength', '$links')";
 		}
@@ -53,8 +54,6 @@ include_once '../config.php';
 	}
 ?>
 
-<html>
-   
 <?php include '../header.php' ?>
 	
 	<div class="container">
@@ -97,5 +96,3 @@ include_once '../config.php';
 
 	
 <?php include '../footer.php' ?>
-   
-</html>

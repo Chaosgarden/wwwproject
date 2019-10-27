@@ -4,21 +4,6 @@ include_once '../config.php';
 
 	if (isset($_POST['submit'])) 
 	{
-	$target_dir = "../imageUploads//";
-	$target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	
-    $check = getimagesize($_FILES["imageUpload"]["tmp_name"]);
-    if($check !== false) 
-	{
-        $uploadOk = 1;
-    }
-
-    if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file))
-	{
-        $filePathArtists = "/wwwproject/imageUploads/" .basename( $_FILES["imageUpload"]["name"]);
-    } 
 		$firstName=$conn->real_escape_string($_POST['firstName']);
 		$lastName=$conn->real_escape_string($_POST['lastName']);
 		$nationality=$conn->real_escape_string($_POST['nationality']);
@@ -26,26 +11,64 @@ include_once '../config.php';
 		$yearofDeath=$conn->real_escape_string($_POST['yearofDeath']);
 		$biography=$conn->real_escape_string($_POST['biography']);
 		$picture=$conn->real_escape_string($_POST['picture']);
-			
-		if($picture == "" && $yearofDeath == "")
+		$upload = false;
+		
+		if(basename($_FILES["imageUpload"]["name"]) != null)
 		{
-			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$filePathArtists')";
+			$upload = true;
 		}
-		else if($yearofDeath == "" && $picture != "")
+		if($picture == null && $yearofDeath == null && $upload == true)
+		{
+			$target_dir = "../imageUploads//";
+			$target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			
+			$check = getimagesize($_FILES["imageUpload"]["tmp_name"]);
+			
+	
+				if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file))
+				{
+					$filePathArtists = "/wwwproject/imageUploads/" .basename( $_FILES["imageUpload"]["name"]);
+				} 
+				$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+				values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$filePathArtists')";
+					
+
+		}
+		else if($yearofDeath == null && $picture != null)
+        {
+                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$picture')";
+        }
+		else if($yearofDeath !== null && $picture == null && $upload == true)
+        {
+			$target_dir = "../imageUploads//";
+			$target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			
+			$check = getimagesize($_FILES["imageUpload"]["tmp_name"]);
+			if($check !== false) 
+			{
+				$uploadOk = 1;
+			}
+			if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $target_file))
+			{
+				$filePathArtists = "/wwwproject/imageUploads/" .basename( $_FILES["imageUpload"]["name"]);
+			} 
+            $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
+            values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null, '$biography', '$filePathArtists')";
+        }
+		else if($yearofDeath != null && $picture !== null)
         {
                 $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
                 values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$picture')";
         }
-		else if($yearofDeath != "" && $picture == "")
-        {
-                $sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-                values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', '$yearofDeath', '$biography', '$filePathArtists')";
-        }
 		else
 		{
 			$sql="INSERT INTO artist (firstName, lastName, nationality, yearOfBirth, yearOfDeath, biography, picture)
-			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', , '$biography', '$picture')";
+			values ('$firstName', '$lastName', '$nationality', '$yearOfBirth', null , '$biography', '$picture')";
 		}
 		
 		if ($conn->query($sql))
@@ -64,10 +87,8 @@ else
 	
 }
 ?>
-<html>
-   
 <?php include '../header.php' ?>
-	
+
 	<div class="container">
 		<div class="col-12" id="registerP">
 			<form action="addArtist.php" method="post" enctype= "multipart/form-data">	
@@ -105,5 +126,3 @@ else
 
 	
 <?php include '../footer.php' ?>
-   
-</html>
